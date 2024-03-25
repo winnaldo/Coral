@@ -2,6 +2,7 @@
 
 import 'package:coral_ui/pages/navigation.dart';
 import 'package:coral_ui/pages/notifications/success_bid.dart';
+import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -39,51 +40,47 @@ class _MakeABidState extends State<MakeABid> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
-    // screen dimensions
-    bool isMobile = size.width <= 768;
-    bool isTablet = size.width > 768 && size.width <= 992;
-    bool isDesktop = size.width >= 992;
-
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.grey[100],
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(
-            top: size.height * 0.05,
-            right: size.width * 0.05,
-            left: size.width * 0.05,
-            bottom: size.width * 0.05,
+            top: 24.h,
+            right: 12.w,
+            left: 12.w,
+            bottom: 18.h,
           ),
           child: Column(
             children: [
               Row(
                 children: [
+                  SizedBox(
+                    width: 6.w,
+                  ),
                   Image(
-                    height: size.width * 0.07,
-                    width: size.width * 0.07,
+                    height: 14.w,
+                    width: 14.w,
                     image: AssetImage('lib/imgs/back.png'),
                     color: Color.fromARGB(255, 66, 109, 87),
                   ),
                   SizedBox(
-                    width: size.width * 0.05,
+                    width: 16.w,
                   ),
                   Image(
-                    height: size.width * 0.095,
-                    width: size.width * 0.095,
+                    height: 22.w,
+                    width: 22.w,
                     image: AssetImage('lib/imgs/bid.png'),
                   ),
                   SizedBox(
-                    width: size.width * 0.04,
+                    width: 10.w,
                   ),
                   Text(
                     "Make a Bid",
                     style: GoogleFonts.lexend(
                       textStyle: TextStyle(
                         color: Color.fromARGB(255, 66, 109, 87),
-                        fontSize: size.height * 0.03,
+                        fontSize: 15.fs,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -91,274 +88,281 @@ class _MakeABidState extends State<MakeABid> {
                 ],
               ),
               SizedBox(
-                height: size.height * 0.025,
+                height: 12.h,
               ),
               Container(
-                height: size.height * 0.725,
-                width: size.width * 0.875,
+                height: 496.h,
+                width: 320.w,
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 255, 253, 248),
                   borderRadius: BorderRadius.all(
-                    Radius.circular(20),
+                    Radius.circular(12),
                   ),
                 ),
                 child: Padding(
                   padding: EdgeInsets.only(
-                    top: size.height * 0.02,
-                    right: size.width * 0.06,
-                    left: size.width * 0.06,
-                    bottom: size.height * 0.035,
+                    top: 16.h,
+                    right: 14.w,
+                    left: 14.w,
+                    bottom: 14.h,
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  child: ListView(
+                    physics: BouncingScrollPhysics(),
                     children: [
                       Column(
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Image(
-                                height: size.width * 0.28,
-                                width: size.width * 0.28,
+                          Container(
+                            height: 286.h,
+                            width: 286.w,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(12),
+                              ),
+                            ),
+                            child: Center(
+                              child: Image(
+                                height: 128.w,
+                                width: 128.w,
                                 image: AssetImage('lib/imgs/tuna.png'),
                               ),
-                              SizedBox(
-                                width: size.width * 0.375,
-                                child: Center(
-                                  child: SingleChildScrollView(
-                                    reverse: false,
-                                    clipBehavior: Clip.antiAlias,
-                                    physics: BouncingScrollPhysics(),
-                                    scrollDirection: Axis.horizontal,
-                                    child: Text(
-                                      'Tuna Fish',
-                                      style: GoogleFonts.lexend(
-                                        textStyle: TextStyle(
-                                          color:
-                                              Color.fromARGB(255, 66, 109, 87),
-                                          fontSize: size.height * 0.0375,
-                                          fontWeight: FontWeight.w800,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                           SizedBox(
-                            height: size.height * 0.025,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(
-                                    bottom: size.height * 0.005),
+                            width: 286.w,
+                            child: Center(
+                              child: SingleChildScrollView(
+                                reverse: false,
+                                clipBehavior: Clip.antiAlias,
+                                physics: BouncingScrollPhysics(),
+                                scrollDirection: Axis.horizontal,
                                 child: Text(
-                                  'Current Price',
+                                  'Tuna Fish',
                                   style: GoogleFonts.lexend(
                                     textStyle: TextStyle(
                                       color: Color.fromARGB(255, 66, 109, 87),
-                                      fontSize: size.height * 0.025,
+                                      fontSize: 22.fs,
                                       fontWeight: FontWeight.w800,
                                     ),
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                width: size.width * 0.3,
-                                child: SingleChildScrollView(
-                                  reverse: true,
-                                  clipBehavior: Clip.antiAlias,
-                                  physics: BouncingScrollPhysics(),
-                                  scrollDirection: Axis.horizontal,
-                                  child: SelectableText(
-                                    widget.currentPrice,
-                                    style: GoogleFonts.lexend(
-                                      textStyle: TextStyle(
-                                        color: Color.fromARGB(255, 66, 109, 87),
-                                        fontSize: size.height * 0.022,
-                                        fontWeight: FontWeight.w800,
-                                      ),
-                                    ),
-                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 16.h,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                              bottom: 1.h,
+                            ),
+                            child: Text(
+                              'Current Price',
+                              style: GoogleFonts.lexend(
+                                textStyle: TextStyle(
+                                  color: Color.fromARGB(255, 66, 109, 87),
+                                  fontSize: 13.fs,
+                                  fontWeight: FontWeight.w800,
                                 ),
                               ),
-                            ],
+                            ),
                           ),
                           SizedBox(
-                            height: size.height * 0.005,
-                          ),
-                          Divider(
-                            thickness: 1.2,
-                            color: Color.fromARGB(255, 238, 227, 79),
-                          ),
-                          SizedBox(
-                            height: size.height * 0.01,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(
-                                    bottom: size.height * 0.005),
-                                child: Text(
-                                  'Increment Price',
-                                  style: GoogleFonts.lexend(
-                                    textStyle: TextStyle(
-                                      color: Color.fromARGB(255, 66, 109, 87),
-                                      fontSize: size.height * 0.025,
-                                      fontWeight: FontWeight.w800,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: size.width * 0.3,
-                                child: SingleChildScrollView(
-                                  reverse: true,
-                                  clipBehavior: Clip.antiAlias,
-                                  physics: BouncingScrollPhysics(),
-                                  scrollDirection: Axis.horizontal,
-                                  child: SelectableText(
-                                    widget.incrementPrice,
-                                    style: GoogleFonts.lexend(
-                                      textStyle: TextStyle(
-                                        color: Color.fromARGB(255, 66, 109, 87),
-                                        fontSize: size.height * 0.022,
-                                        fontWeight: FontWeight.w800,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: size.height * 0.005,
-                          ),
-                          Divider(
-                            thickness: 1.2,
-                            color: Color.fromARGB(255, 238, 227, 79),
-                          ),
-                          SizedBox(
-                            height: size.height * 0.035,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                " Your Offer",
+                            width: 128.w,
+                            child: SingleChildScrollView(
+                              reverse: true,
+                              clipBehavior: Clip.antiAlias,
+                              physics: BouncingScrollPhysics(),
+                              scrollDirection: Axis.horizontal,
+                              child: SelectableText(
+                                widget.currentPrice,
                                 style: GoogleFonts.lexend(
                                   textStyle: TextStyle(
                                     color: Color.fromARGB(255, 66, 109, 87),
-                                    fontSize: size.height * 0.0245,
+                                    fontSize: 13.fs,
                                     fontWeight: FontWeight.w800,
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: size.height * 0.01,
-                              ),
-                              Container(
-                                height: size.height * 0.075,
-                                width: size.width * 1,
-                                decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 252, 250, 237),
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: size.height * 0.01,
-                                      horizontal: size.width * 0.035),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            top: size.height * 0.0045),
-                                        child: SizedBox(
-                                          height: size.height * 0.055,
-                                          width: size.width * 0.475,
-                                          child: TextField(
-                                            keyboardType: TextInputType.number,
-                                            cursorColor:
-                                                Color.fromARGB(255, 34, 96, 12),
-                                            decoration: InputDecoration(
-                                              isDense: true,
-                                              border: InputBorder.none,
-                                              hintText: 'Insert Here',
-                                              hintStyle: TextStyle(
-                                                fontSize: size.height * 0.02,
-                                                fontWeight: FontWeight.w600,
-                                                color: Color.fromARGB(
-                                                    92, 34, 96, 12),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Text(
-                                        "ETH",
-                                        style: GoogleFonts.lexend(
-                                          textStyle: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 66, 109, 87),
-                                            fontSize: size.height * 0.023,
-                                            fontWeight: FontWeight.w700,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                         ],
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          _isLoading ? null : _onSubmit();
-                        },
-                        child: Container(
-                          height: size.height * 0.0645,
-                          width: size.width * 0.875,
-                          decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 66, 109, 87),
-                            borderRadius: BorderRadius.circular(12),
+                      SizedBox(
+                        height: 1.h,
+                      ),
+                      Divider(
+                        thickness: 1.2,
+                        color: Color.fromARGB(255, 238, 227, 79),
+                      ),
+                      SizedBox(
+                        height: 1.h,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                              bottom: 1.h,
+                            ),
+                            child: Text(
+                              'Increment Price',
+                              style: GoogleFonts.lexend(
+                                textStyle: TextStyle(
+                                  color: Color.fromARGB(255, 66, 109, 87),
+                                  fontSize: 13.fs,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                              ),
+                            ),
                           ),
-                          child: Center(
-                            child: _isLoading
-                                ? Container(
-                                    width: 24,
-                                    height: 24,
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: const CircularProgressIndicator(
-                                      color: Colors.white,
-                                      strokeWidth: 3,
+                          SizedBox(
+                            width: 128.w,
+                            child: SingleChildScrollView(
+                              reverse: true,
+                              clipBehavior: Clip.antiAlias,
+                              physics: BouncingScrollPhysics(),
+                              scrollDirection: Axis.horizontal,
+                              child: SelectableText(
+                                widget.incrementPrice,
+                                style: GoogleFonts.lexend(
+                                  textStyle: TextStyle(
+                                    color: Color.fromARGB(255, 66, 109, 87),
+                                    fontSize: 13.fs,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 1.h,
+                      ),
+                      Divider(
+                        thickness: 1.2,
+                        color: Color.fromARGB(255, 238, 227, 79),
+                      ),
+                      SizedBox(
+                        height: 1.h,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Your Offer",
+                            style: GoogleFonts.lexend(
+                              textStyle: TextStyle(
+                                color: Color.fromARGB(255, 66, 109, 87),
+                                fontSize: 13.fs,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 12.h,
+                          ),
+                          Container(
+                            height: 50.h,
+                            width: 320.w,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 252, 250, 237),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(12),
+                              ),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                vertical: 6.h,
+                                horizontal: 12.w,
+                              ),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    height: 50.h,
+                                    width: 220.w,
+                                    child: TextField(
+                                      keyboardType: TextInputType.number,
+                                      cursorColor:
+                                          Color.fromARGB(255, 34, 96, 12),
+                                      decoration: InputDecoration(
+                                        isDense: true,
+                                        border: InputBorder.none,
+                                        hintText: 'Insert Here',
+                                        hintStyle: TextStyle(
+                                          fontSize: 13.fs,
+                                          fontWeight: FontWeight.w600,
+                                          color: Color.fromARGB(92, 34, 96, 12),
+                                        ),
+                                      ),
                                     ),
-                                  )
-                                : Text(
-                                    "Create Sale",
+                                  ),
+                                  Text(
+                                    "ETH",
                                     style: GoogleFonts.lexend(
                                       textStyle: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: size.height * 0.0235,
+                                        color: Color.fromARGB(255, 66, 109, 87),
+                                        fontSize: 13.fs,
                                         fontWeight: FontWeight.w700,
                                       ),
                                     ),
                                   ),
+                                ],
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 12.h,
                       ),
                     ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 13.h,
+              ),
+              GestureDetector(
+                onTap: () {
+                  _isLoading ? null : _onSubmit();
+                },
+                child: Container(
+                  height: 40.h,
+                  width: 320.w,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 66, 109, 87),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Center(
+                    child: _isLoading
+                        ? Container(
+                            width: 21.w,
+                            height: 21.w,
+                            padding: const EdgeInsets.all(2.0),
+                            child: const CircularProgressIndicator(
+                              color: Colors.white,
+                              strokeWidth: 3,
+                            ),
+                          )
+                        : Text(
+                            "Create Sale",
+                            style: GoogleFonts.lexend(
+                              textStyle: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15.fs,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
                   ),
                 ),
               ),
