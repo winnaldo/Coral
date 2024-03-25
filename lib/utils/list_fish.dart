@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:coral_ui/pages/fish_information.dart';
+import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -31,13 +32,6 @@ class ListFish extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
-    // screen dimensions
-    bool isMobile = size.width <= 768;
-    bool isTablet = size.width > 768 && size.width <= 992;
-    bool isDesktop = size.width >= 992;
-
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -58,24 +52,24 @@ class ListFish extends StatelessWidget {
         );
       },
       child: Container(
-        height: size.height * 0.315,
-        width: size.width * 0.445,
+        height: 72.h,
+        width: 152.w,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(
-            Radius.circular(20),
+            Radius.circular(16),
           ),
         ),
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: size.width * 0.035,
-            vertical: size.height * 0.015,
+            horizontal: 12.w,
+            vertical: 11.h,
           ),
           child: Column(
             children: [
               Container(
-                height: size.height * 0.15,
-                width: size.width * 0.3,
+                height: 96.w,
+                width: 96.w,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('lib/imgs/tuna.png'),
@@ -83,10 +77,10 @@ class ListFish extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: size.height * 0.0005,
+                height: 8.h,
               ),
               SizedBox(
-                width: size.width * 0.3,
+                width: 128.w,
                 child: Center(
                   child: SingleChildScrollView(
                     reverse: false,
@@ -98,7 +92,7 @@ class ListFish extends StatelessWidget {
                       style: GoogleFonts.lexend(
                         textStyle: TextStyle(
                           color: Color.fromARGB(255, 66, 109, 87),
-                          fontSize: size.height * 0.029,
+                          fontSize: 18.fs,
                           fontWeight: FontWeight.w800,
                         ),
                       ),
@@ -107,7 +101,7 @@ class ListFish extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: size.height * 0.02,
+                height: 10.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -117,7 +111,7 @@ class ListFish extends StatelessWidget {
                     style: GoogleFonts.lexend(
                       textStyle: TextStyle(
                         color: Color.fromARGB(255, 66, 109, 87),
-                        fontSize: size.height * 0.0165,
+                        fontSize: 10.fs,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -125,7 +119,7 @@ class ListFish extends StatelessWidget {
                   Row(
                     children: [
                       SizedBox(
-                        width: size.width * 0.175,
+                        width: 72.w,
                         child: SingleChildScrollView(
                           reverse: true,
                           clipBehavior: Clip.antiAlias,
@@ -136,7 +130,7 @@ class ListFish extends StatelessWidget {
                             style: GoogleFonts.lexend(
                               textStyle: TextStyle(
                                 color: Color.fromARGB(255, 66, 109, 87),
-                                fontSize: size.height * 0.0165,
+                                fontSize: 10.fs,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -148,7 +142,7 @@ class ListFish extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: size.height * 0.005,
+                height: 2.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -158,13 +152,13 @@ class ListFish extends StatelessWidget {
                     style: GoogleFonts.lexend(
                       textStyle: TextStyle(
                         color: Color.fromARGB(255, 66, 109, 87),
-                        fontSize: size.height * 0.0165,
+                        fontSize: 10.fs,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
                   SizedBox(
-                    width: size.width * 0.175,
+                    width: 72.w,
                     child: SingleChildScrollView(
                       reverse: true,
                       clipBehavior: Clip.antiAlias,
@@ -175,7 +169,7 @@ class ListFish extends StatelessWidget {
                         style: GoogleFonts.lexend(
                           textStyle: TextStyle(
                             color: Color.fromARGB(255, 66, 109, 87),
-                            fontSize: size.height * 0.0165,
+                            fontSize: 10.fs,
                             fontWeight: FontWeight.w600,
                           ),
                         ),

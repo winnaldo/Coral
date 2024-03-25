@@ -3,9 +3,8 @@
 import 'package:coral_ui/pages/sales/farmed_fish.dart';
 import 'package:coral_ui/pages/sales/wild_caught_fish.dart';
 import 'package:coral_ui/utils/list_fish.dart';
+import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Homepage extends StatefulWidget {
@@ -19,12 +18,6 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
-    // screen dimensions
-    bool isMobile = size.width <= 768;
-    bool isTablet = size.width > 768 && size.width <= 992;
-    bool isDesktop = size.width >= 992;
-
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: SafeArea(
@@ -32,7 +25,7 @@ class _HomepageState extends State<Homepage> {
         child: Stack(
           children: [
             Container(
-              height: size.height * 0.45,
+              height: 286.h,
               width: size.width * 1,
               decoration: BoxDecoration(
                 color: Color.fromARGB(255, 95, 212, 177),
@@ -43,16 +36,18 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: size.height * 0.1),
+              padding: EdgeInsets.only(
+                top: 48.h,
+              ),
               child: Column(
                 children: [
                   SizedBox(
-                    height: size.height * 0.0325,
+                    height: 16.h,
                   ),
                   Center(
                     child: Container(
-                      height: size.height * 0.0775,
-                      width: size.width * 0.5,
+                      height: 64.h,
+                      width: 148.w,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage('lib/imgs/LogoCoral3.png'),
@@ -61,15 +56,15 @@ class _HomepageState extends State<Homepage> {
                     ),
                   ),
                   SizedBox(
-                    height: size.height * 0.0425,
+                    height: 22.h,
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      left: size.width * 0.05,
-                      right: size.width * 0.05,
+                      left: 19.w,
+                      right: 19.w,
                     ),
-                    child: Container(
-                      height: size.height * 0.315,
+                    child: SizedBox(
+                      height: 196.h,
                       child: ListView(
                         clipBehavior: Clip.none,
                         scrollDirection: Axis.horizontal,
@@ -77,7 +72,8 @@ class _HomepageState extends State<Homepage> {
                         children: [
                           Padding(
                             padding: EdgeInsets.symmetric(
-                                horizontal: size.width * 0.015),
+                              horizontal: 6.w,
+                            ),
                             child: ListFish(
                               name: 'Tuna Fish',
                               currentPrice: '0.002 ETH',
@@ -93,7 +89,8 @@ class _HomepageState extends State<Homepage> {
                           ),
                           Padding(
                             padding: EdgeInsets.symmetric(
-                                horizontal: size.width * 0.015),
+                              horizontal: 6.w,
+                            ),
                             child: ListFish(
                               name: 'Tuna Fish',
                               currentPrice: '0.003 ETH',
@@ -109,7 +106,8 @@ class _HomepageState extends State<Homepage> {
                           ),
                           Padding(
                             padding: EdgeInsets.symmetric(
-                                horizontal: size.width * 0.015),
+                              horizontal: 6.w,
+                            ),
                             child: ListFish(
                               name: 'Tuna Fish',
                               currentPrice: '0.001 ETH',
@@ -128,7 +126,7 @@ class _HomepageState extends State<Homepage> {
                     ),
                   ),
                   SizedBox(
-                    height: size.height * 0.035,
+                    height: 18.h,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -141,12 +139,12 @@ class _HomepageState extends State<Homepage> {
                     },
                     child: Padding(
                       padding: EdgeInsets.only(
-                        left: size.width * 0.065,
-                        right: size.width * 0.065,
+                        left: 18.w,
+                        right: 18.w,
                       ),
                       child: Container(
-                        height: size.height * 0.1,
-                        width: size.width * 0.85,
+                        height: 63.h,
+                        width: 298.w,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.all(
@@ -157,22 +155,22 @@ class _HomepageState extends State<Homepage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             SizedBox(
-                              width: size.width * 0.05,
+                              width: 16.w,
                             ),
                             Image(
-                              height: size.width * 0.1275,
-                              width: size.width * 0.1275,
+                              height: 42.w,
+                              width: 42.w,
                               image: AssetImage('lib/imgs/beach2.png'),
                             ),
                             SizedBox(
-                              width: size.width * 0.05,
+                              width: 16.w,
                             ),
                             Text(
                               "Wild-Caught Fish",
                               style: GoogleFonts.lexend(
                                 textStyle: TextStyle(
                                   color: Color.fromARGB(255, 66, 109, 87),
-                                  fontSize: size.height * 0.024,
+                                  fontSize: 16.fs,
                                   fontWeight: FontWeight.w800,
                                 ),
                               ),
@@ -183,7 +181,7 @@ class _HomepageState extends State<Homepage> {
                     ),
                   ),
                   SizedBox(
-                    height: size.height * 0.0175,
+                    height: 12.h,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -196,12 +194,12 @@ class _HomepageState extends State<Homepage> {
                     },
                     child: Padding(
                       padding: EdgeInsets.only(
-                        left: size.width * 0.065,
-                        right: size.width * 0.065,
+                        left: 18.w,
+                        right: 18.w,
                       ),
                       child: Container(
-                        height: size.height * 0.1,
-                        width: size.width * 0.85,
+                        height: 63.h,
+                        width: 298.w,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.all(
@@ -212,22 +210,22 @@ class _HomepageState extends State<Homepage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             SizedBox(
-                              width: size.width * 0.05,
+                              width: 16.w,
                             ),
                             Image(
-                              height: size.width * 0.1275,
-                              width: size.width * 0.1275,
+                              height: 42.w,
+                              width: 42.w,
                               image: AssetImage('lib/imgs/pond.png'),
                             ),
                             SizedBox(
-                              width: size.width * 0.05,
+                              width: 16.w,
                             ),
                             Text(
                               "Farmed Fish",
                               style: GoogleFonts.lexend(
                                 textStyle: TextStyle(
                                   color: Color.fromARGB(255, 66, 109, 87),
-                                  fontSize: size.height * 0.024,
+                                  fontSize: 16.fs,
                                   fontWeight: FontWeight.w800,
                                 ),
                               ),

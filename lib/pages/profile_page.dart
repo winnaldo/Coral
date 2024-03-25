@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:coral_ui/pages/your_bids.dart';
+import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,24 +16,19 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
-    // screen dimensions
-    bool isMobile = size.width <= 768;
-    bool isTablet = size.width > 768 && size.width <= 992;
-    bool isDesktop = size.width >= 992;
-
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: size.height * 0.1,
+              height: 64.h,
             ),
             Center(
               child: Container(
-                height: size.height * 0.675,
-                width: size.width * 0.85,
+                height: 384.h,
+                width: 312.w,
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 255, 253, 247),
                   borderRadius: BorderRadius.all(
@@ -41,14 +37,14 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                    vertical: size.height * 0.065,
-                    horizontal: size.height * 0.03,
+                    vertical: 38.h,
+                    horizontal: 24.w,
                   ),
                   child: Column(
                     children: [
                       Container(
-                        height: size.height * 0.0775,
-                        width: size.width * 0.5,
+                        height: 56.h,
+                        width: 132.w,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage('lib/imgs/LogoCoral4.png'),
@@ -56,7 +52,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                       ),
                       SizedBox(
-                        height: size.height * 0.045,
+                        height: 26.h,
                       ),
                       Divider(
                         thickness: 1.5,
@@ -64,29 +60,34 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(
-                          vertical: size.height * 0.01,
+                          vertical: 5.h,
                         ),
-                        child: Row(
-                          children: [
-                            Image(
-                              height: size.width * 0.115,
-                              width: size.width * 0.115,
-                              image: AssetImage('lib/imgs/profile.png'),
-                            ),
-                            SizedBox(
-                              width: size.width * 0.05,
-                            ),
-                            Text(
-                              "Your Profile",
-                              style: GoogleFonts.lexend(
-                                textStyle: TextStyle(
-                                  color: Color.fromARGB(255, 66, 109, 87),
-                                  fontSize: size.height * 0.024,
-                                  fontWeight: FontWeight.w800,
+                        child: Container(
+                          height: 28.h,
+                          width: 258.w,
+                          color: Colors.transparent,
+                          child: Row(
+                            children: [
+                              Image(
+                                height: 32.w,
+                                width: 32.w,
+                                image: AssetImage('lib/imgs/profile.png'),
+                              ),
+                              SizedBox(
+                                width: 16.w,
+                              ),
+                              Text(
+                                "Your Profile",
+                                style: GoogleFonts.lexend(
+                                  textStyle: TextStyle(
+                                    color: Color.fromARGB(255, 66, 109, 87),
+                                    fontSize: 15.fs,
+                                    fontWeight: FontWeight.w800,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       Divider(
@@ -104,24 +105,65 @@ class _ProfilePageState extends State<ProfilePage> {
                         },
                         child: Padding(
                           padding: EdgeInsets.symmetric(
-                            vertical: size.height * 0.01,
+                            vertical: 5.h,
                           ),
+                          child: Container(
+                            height: 28.h,
+                            width: 258.w,
+                            color: Colors.transparent,
+                            child: Row(
+                              children: [
+                                Image(
+                                  height: 32.w,
+                                  width: 32.w,
+                                  image: AssetImage('lib/imgs/bid.png'),
+                                ),
+                                SizedBox(
+                                  width: 16.w,
+                                ),
+                                Text(
+                                  "Your Bids",
+                                  style: GoogleFonts.lexend(
+                                    textStyle: TextStyle(
+                                      color: Color.fromARGB(255, 66, 109, 87),
+                                      fontSize: 15.fs,
+                                      fontWeight: FontWeight.w800,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Divider(
+                        thickness: 1.5,
+                        color: Color.fromARGB(255, 255, 193, 99),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 5.h,
+                        ),
+                        child: Container(
+                          height: 28.h,
+                          width: 258.w,
+                          color: Colors.transparent,
                           child: Row(
                             children: [
                               Image(
-                                height: size.width * 0.115,
-                                width: size.width * 0.115,
-                                image: AssetImage('lib/imgs/bid.png'),
+                                height: 32.w,
+                                width: 32.w,
+                                image: AssetImage('lib/imgs/withdrawal.png'),
                               ),
                               SizedBox(
-                                width: size.width * 0.05,
+                                width: 16.w,
                               ),
                               Text(
-                                "Your Bids",
+                                "Withdrawal",
                                 style: GoogleFonts.lexend(
                                   textStyle: TextStyle(
                                     color: Color.fromARGB(255, 66, 109, 87),
-                                    fontSize: size.height * 0.024,
+                                    fontSize: 15.fs,
                                     fontWeight: FontWeight.w800,
                                   ),
                                 ),
@@ -136,60 +178,34 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(
-                          vertical: size.height * 0.01,
+                          vertical: 5.h,
                         ),
-                        child: Row(
-                          children: [
-                            Image(
-                              height: size.width * 0.115,
-                              width: size.width * 0.115,
-                              image: AssetImage('lib/imgs/withdrawal.png'),
-                            ),
-                            SizedBox(
-                              width: size.width * 0.05,
-                            ),
-                            Text(
-                              "Withdrawal",
-                              style: GoogleFonts.lexend(
-                                textStyle: TextStyle(
-                                  color: Color.fromARGB(255, 66, 109, 87),
-                                  fontSize: size.height * 0.024,
-                                  fontWeight: FontWeight.w800,
+                        child: Container(
+                          height: 28.h,
+                          width: 258.w,
+                          color: Colors.transparent,
+                          child: Row(
+                            children: [
+                              Image(
+                                height: 32.w,
+                                width: 32.w,
+                                image: AssetImage('lib/imgs/shield.png'),
+                              ),
+                              SizedBox(
+                                width: 16.w,
+                              ),
+                              Text(
+                                "Authorize",
+                                style: GoogleFonts.lexend(
+                                  textStyle: TextStyle(
+                                    color: Color.fromARGB(255, 66, 109, 87),
+                                    fontSize: 15.fs,
+                                    fontWeight: FontWeight.w800,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Divider(
-                        thickness: 1.5,
-                        color: Color.fromARGB(255, 255, 193, 99),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: size.height * 0.01,
-                        ),
-                        child: Row(
-                          children: [
-                            Image(
-                              height: size.width * 0.115,
-                              width: size.width * 0.115,
-                              image: AssetImage('lib/imgs/shield.png'),
-                            ),
-                            SizedBox(
-                              width: size.width * 0.05,
-                            ),
-                            Text(
-                              "Authorize",
-                              style: GoogleFonts.lexend(
-                                textStyle: TextStyle(
-                                  color: Color.fromARGB(255, 66, 109, 87),
-                                  fontSize: size.height * 0.024,
-                                  fontWeight: FontWeight.w800,
-                                ),
-                              ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       Divider(

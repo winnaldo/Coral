@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable
 
 import 'package:coral_ui/utils/list_fish.dart';
+import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,50 +15,43 @@ class FarmedFish extends StatefulWidget {
 class _FarmedFishState extends State<FarmedFish> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
-    // screen dimensions
-    bool isMobile = size.width <= 768;
-    bool isTablet = size.width > 768 && size.width <= 992;
-    bool isDesktop = size.width >= 992;
-
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(
-            top: size.height * 0.05,
-            right: size.width * 0.05,
-            left: size.width * 0.05,
-            bottom: size.width * 0.05,
+            top: 24.h,
+            right: 18.w,
+            left: 18.w,
+            bottom: 18.h,
           ),
           child: Column(
             children: [
               Row(
                 children: [
                   Image(
-                    height: size.width * 0.07,
-                    width: size.width * 0.07,
+                    height: 14.w,
+                    width: 14.w,
                     image: AssetImage('lib/imgs/back.png'),
                     color: Color.fromARGB(255, 66, 109, 87),
                   ),
                   SizedBox(
-                    width: size.width * 0.05,
+                    width: 16.w,
                   ),
                   Image(
-                    height: size.width * 0.095,
-                    width: size.width * 0.095,
+                    height: 22.w,
+                    width: 22.w,
                     image: AssetImage('lib/imgs/pond.png'),
                   ),
                   SizedBox(
-                    width: size.width * 0.04,
+                    width: 10.w,
                   ),
                   Text(
                     "Farmed Fish",
                     style: GoogleFonts.lexend(
                       textStyle: TextStyle(
                         color: Color.fromARGB(255, 66, 109, 87),
-                        fontSize: size.height * 0.0285,
+                        fontSize: 15.fs,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -65,15 +59,15 @@ class _FarmedFishState extends State<FarmedFish> {
                 ],
               ),
               SizedBox(
-                height: size.height * 0.025,
+                height: 18.h,
               ),
               Expanded(
                 child: GridView.count(
                   clipBehavior: Clip.antiAlias,
                   padding: EdgeInsets.zero,
                   physics: BouncingScrollPhysics(),
-                  mainAxisSpacing: size.height * 0.02,
-                  crossAxisSpacing: size.width * 0.03,
+                  mainAxisSpacing: 12.h,
+                  crossAxisSpacing: 12.w,
                   crossAxisCount: 2,
                   childAspectRatio: 0.725,
                   children: [],

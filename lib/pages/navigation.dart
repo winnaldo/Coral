@@ -3,6 +3,7 @@
 import 'package:coral_ui/pages/create_nft.dart';
 import 'package:coral_ui/pages/homepage.dart';
 import 'package:coral_ui/pages/profile_page.dart';
+import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
 
 class Navigation extends StatefulWidget {
@@ -15,9 +16,11 @@ class Navigation extends StatefulWidget {
 class _NavigationState extends State<Navigation> {
   int _selectedIndex = 0;
   void _navigateBottomBar(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    setState(
+      () {
+        _selectedIndex = index;
+      },
+    );
   }
 
   final List<Widget> _pages = [
@@ -28,17 +31,11 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
-    // screen dimensions
-    bool isMobile = size.width <= 768;
-    bool isTablet = size.width > 768 && size.width <= 992;
-    bool isDesktop = size.width >= 992;
-
     return Scaffold(
       backgroundColor: Colors.grey[100],
       floatingActionButton: SizedBox(
-        height: size.width * 0.185,
-        width: size.width * 0.185,
+        height: 62.w,
+        width: 62.w,
         child: FloatingActionButton(
           shape: CircleBorder(),
           elevation: 0,
@@ -53,8 +50,8 @@ class _NavigationState extends State<Navigation> {
           backgroundColor: Color.fromARGB(255, 95, 212, 177),
           splashColor: Color.fromARGB(255, 33, 179, 106),
           child: Image(
-            height: size.width * 0.1,
-            width: size.width * 0.1,
+            height: 28.w,
+            width: 28.w,
             image: AssetImage('lib/imgs/add.png'),
             color: Colors.white,
           ),
@@ -64,7 +61,7 @@ class _NavigationState extends State<Navigation> {
       resizeToAvoidBottomInset: false,
       body: _pages[_selectedIndex],
       bottomNavigationBar: Container(
-        height: size.height * 0.125,
+        height: 68.h,
         width: size.width * 1,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -92,14 +89,14 @@ class _NavigationState extends State<Navigation> {
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.home,
-                  size: size.width * 0.12,
+                  size: 38.w,
                 ),
                 label: 'Homepage',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.person,
-                  size: size.width * 0.12,
+                  size: 38.w,
                 ),
                 label: 'Profile',
               )
