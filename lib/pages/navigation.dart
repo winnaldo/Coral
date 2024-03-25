@@ -40,6 +40,7 @@ class _NavigationState extends State<Navigation> {
         height: size.width * 0.185,
         width: size.width * 0.185,
         child: FloatingActionButton(
+          shape: CircleBorder(),
           elevation: 0,
           onPressed: () {
             Navigator.push(
@@ -72,31 +73,38 @@ class _NavigationState extends State<Navigation> {
             topLeft: Radius.circular(60),
           ),
         ),
-        child: BottomNavigationBar(
-          selectedItemColor: Color.fromARGB(255, 66, 109, 87),
-          unselectedItemColor: Color.fromARGB(255, 95, 212, 177),
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          currentIndex: _selectedIndex,
-          onTap: _navigateBottomBar,
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                size: size.width * 0.12,
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            highlightColor: Colors.transparent,
+            splashColor: Colors.transparent,
+          ),
+          home: BottomNavigationBar(
+            selectedItemColor: Color.fromARGB(255, 66, 109, 87),
+            unselectedItemColor: Color.fromARGB(255, 95, 212, 177),
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            currentIndex: _selectedIndex,
+            onTap: _navigateBottomBar,
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                  size: size.width * 0.12,
+                ),
+                label: 'Homepage',
               ),
-              label: 'Homepage',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
-                size: size.width * 0.12,
-              ),
-              label: 'Profile',
-            )
-          ],
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.person,
+                  size: size.width * 0.12,
+                ),
+                label: 'Profile',
+              )
+            ],
+          ),
         ),
       ),
     );

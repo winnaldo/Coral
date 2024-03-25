@@ -15,11 +15,8 @@ class Splash_Screen extends StatefulWidget {
 }
 
 class _Splash_ScreenState extends State<Splash_Screen> {
-  late bool _isLoading;
-
   @override
   void initState() {
-    _isLoading = true;
     Future.delayed(
       const Duration(milliseconds: 2000),
       () {
@@ -31,7 +28,6 @@ class _Splash_ScreenState extends State<Splash_Screen> {
                 builder: (context) => Login(),
               ),
             );
-            _isLoading = false;
           },
         );
       },

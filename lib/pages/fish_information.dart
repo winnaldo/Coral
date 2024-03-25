@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:coral_ui/pages/buy_now.dart';
 import 'package:coral_ui/pages/close_auction.dart';
 import 'package:coral_ui/pages/make_a_bid.dart';
-import 'package:coral_ui/pages/navigation.dart';
+import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -38,50 +39,46 @@ class FishInformation extends StatefulWidget {
 class _FishInformationState extends State<FishInformation> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
-    // screen dimensions
-    bool isMobile = size.width <= 768;
-    bool isTablet = size.width > 768 && size.width <= 992;
-    bool isDesktop = size.width >= 992;
-
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(
-            top: size.height * 0.05,
-            right: size.width * 0.05,
-            left: size.width * 0.05,
-            bottom: size.width * 0.05,
+            top: 24.h,
+            right: 12.w,
+            left: 12.w,
+            bottom: 18.h,
           ),
           child: Column(
             children: [
               Row(
                 children: [
+                  SizedBox(
+                    width: 6.w,
+                  ),
                   Image(
-                    height: size.width * 0.07,
-                    width: size.width * 0.07,
+                    height: 14.w,
+                    width: 14.w,
                     image: AssetImage('lib/imgs/back.png'),
                     color: Color.fromARGB(255, 66, 109, 87),
                   ),
                   SizedBox(
-                    width: size.width * 0.05,
+                    width: 16.w,
                   ),
                   Image(
-                    height: size.width * 0.095,
-                    width: size.width * 0.095,
+                    height: 22.w,
+                    width: 22.w,
                     image: AssetImage('lib/imgs/fish2.png'),
                   ),
                   SizedBox(
-                    width: size.width * 0.04,
+                    width: 10.w,
                   ),
                   Text(
                     "Fish Information",
                     style: GoogleFonts.lexend(
                       textStyle: TextStyle(
                         color: Color.fromARGB(255, 66, 109, 87),
-                        fontSize: size.height * 0.0285,
+                        fontSize: 15.fs,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -89,35 +86,50 @@ class _FishInformationState extends State<FishInformation> {
                 ],
               ),
               SizedBox(
-                height: size.height * 0.025,
+                height: 12.h,
               ),
               Container(
-                height: size.height * 0.765,
-                width: size.width * 0.875,
+                height: 496.h,
+                width: 320.w,
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 255, 253, 248),
                   borderRadius: BorderRadius.all(
-                    Radius.circular(20),
+                    Radius.circular(12),
                   ),
                 ),
                 child: Padding(
                   padding: EdgeInsets.only(
-                    right: size.width * 0.05,
-                    left: size.width * 0.05,
-                    bottom: size.width * 0.075,
+                    top: 16.h,
+                    right: 14.w,
+                    left: 14.w,
+                    bottom: 14.h,
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  child: ListView(
+                    physics: BouncingScrollPhysics(),
                     children: [
                       Column(
                         children: [
-                          Image(
-                            height: size.width * 0.5,
-                            width: size.width * 0.5,
-                            image: AssetImage('lib/imgs/tuna.png'),
+                          Container(
+                            height: 286.h,
+                            width: 286.w,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(12),
+                              ),
+                            ),
+                            child: Center(
+                              child: Image(
+                                height: 128.w,
+                                width: 128.w,
+                                image: AssetImage('lib/imgs/tuna.png'),
+                              ),
+                            ),
                           ),
                           SizedBox(
-                            width: size.width * 0.7,
+                            height: 12.h,
+                          ),
+                          SizedBox(
+                            width: 286.w,
                             child: Center(
                               child: SingleChildScrollView(
                                 reverse: false,
@@ -129,7 +141,7 @@ class _FishInformationState extends State<FishInformation> {
                                   style: GoogleFonts.lexend(
                                     textStyle: TextStyle(
                                       color: Color.fromARGB(255, 66, 109, 87),
-                                      fontSize: size.height * 0.045,
+                                      fontSize: 22.fs,
                                       fontWeight: FontWeight.w800,
                                     ),
                                   ),
@@ -138,7 +150,7 @@ class _FishInformationState extends State<FishInformation> {
                             ),
                           ),
                           SizedBox(
-                            height: size.height * 0.01,
+                            height: 4.h,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -148,7 +160,7 @@ class _FishInformationState extends State<FishInformation> {
                                 style: GoogleFonts.lexend(
                                   textStyle: TextStyle(
                                     color: Color.fromARGB(255, 66, 109, 87),
-                                    fontSize: size.height * 0.0185,
+                                    fontSize: 11.fs,
                                     fontWeight: FontWeight.w700,
                                   ),
                                 ),
@@ -158,7 +170,7 @@ class _FishInformationState extends State<FishInformation> {
                                 style: GoogleFonts.lexend(
                                   textStyle: TextStyle(
                                     color: Color.fromARGB(255, 66, 109, 87),
-                                    fontSize: size.height * 0.0185,
+                                    fontSize: 11.fs,
                                     fontWeight: FontWeight.w700,
                                   ),
                                 ),
@@ -170,546 +182,545 @@ class _FishInformationState extends State<FishInformation> {
                             color: Color.fromARGB(255, 238, 196, 79),
                           ),
                           SizedBox(
-                            height: size.height * 0.015,
+                            height: 3.h,
                           ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: size.width * 0.01,
-                            ),
-                            child: SizedBox(
-                              height: size.height * 0.27,
-                              child: ListView(
-                                physics: BouncingScrollPhysics(),
+                          Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            bottom: size.height * 0.005),
-                                        child: Text(
-                                          'Current Price',
-                                          style: GoogleFonts.lexend(
-                                            textStyle: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 66, 109, 87),
-                                              fontSize: size.height * 0.025,
-                                              fontWeight: FontWeight.w800,
-                                            ),
-                                          ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      bottom: 1.h,
+                                    ),
+                                    child: Text(
+                                      'Current Price',
+                                      style: GoogleFonts.lexend(
+                                        textStyle: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 66, 109, 87),
+                                          fontSize: 13.fs,
+                                          fontWeight: FontWeight.w800,
                                         ),
                                       ),
-                                      SizedBox(
-                                        width: size.width * 0.3,
-                                        child: SingleChildScrollView(
-                                          reverse: true,
-                                          clipBehavior: Clip.antiAlias,
-                                          physics: BouncingScrollPhysics(),
-                                          scrollDirection: Axis.horizontal,
-                                          child: SelectableText(
-                                            widget.currentPrice,
-                                            style: GoogleFonts.lexend(
-                                              textStyle: TextStyle(
-                                                color: Color.fromARGB(
-                                                    255, 66, 109, 87),
-                                                fontSize: size.height * 0.022,
-                                                fontWeight: FontWeight.w800,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
+                                    ),
                                   ),
                                   SizedBox(
-                                    height: size.height * 0.005,
-                                  ),
-                                  Divider(
-                                    thickness: 1.2,
-                                    color: Color.fromARGB(255, 238, 227, 79),
-                                  ),
-                                  SizedBox(
-                                    height: size.height * 0.01,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            bottom: size.height * 0.005),
-                                        child: Text(
-                                          'Increment Price',
-                                          style: GoogleFonts.lexend(
-                                            textStyle: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 66, 109, 87),
-                                              fontSize: size.height * 0.025,
-                                              fontWeight: FontWeight.w800,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: size.width * 0.3,
-                                        child: SingleChildScrollView(
-                                          reverse: true,
-                                          clipBehavior: Clip.antiAlias,
-                                          physics: BouncingScrollPhysics(),
-                                          scrollDirection: Axis.horizontal,
-                                          child: SelectableText(
-                                            widget.incrementPrice,
-                                            style: GoogleFonts.lexend(
-                                              textStyle: TextStyle(
-                                                color: Color.fromARGB(
-                                                    255, 66, 109, 87),
-                                                fontSize: size.height * 0.022,
-                                                fontWeight: FontWeight.w800,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: size.height * 0.005,
-                                  ),
-                                  Divider(
-                                    thickness: 1.2,
-                                    color: Color.fromARGB(255, 238, 227, 79),
-                                  ),
-                                  SizedBox(
-                                    height: size.height * 0.01,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            bottom: size.height * 0.005),
-                                        child: Text(
-                                          'Buy Now',
-                                          style: GoogleFonts.lexend(
-                                            textStyle: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 66, 109, 87),
-                                              fontSize: size.height * 0.025,
-                                              fontWeight: FontWeight.w800,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: size.width * 0.3,
-                                        child: SingleChildScrollView(
-                                          reverse: true,
-                                          clipBehavior: Clip.antiAlias,
-                                          physics: BouncingScrollPhysics(),
-                                          scrollDirection: Axis.horizontal,
-                                          child: SelectableText(
-                                            widget.buyNowPrice,
-                                            style: GoogleFonts.lexend(
-                                              textStyle: TextStyle(
-                                                color: Color.fromARGB(
-                                                    255, 66, 109, 87),
-                                                fontSize: size.height * 0.022,
-                                                fontWeight: FontWeight.w800,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: size.height * 0.005,
-                                  ),
-                                  Divider(
-                                    thickness: 1.2,
-                                    color: Color.fromARGB(255, 238, 227, 79),
-                                  ),
-                                  SizedBox(
-                                    height: size.height * 0.01,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            bottom: size.height * 0.005),
-                                        child: Text(
-                                          'From',
-                                          style: GoogleFonts.lexend(
-                                            textStyle: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 66, 109, 87),
-                                              fontSize: size.height * 0.025,
-                                              fontWeight: FontWeight.w800,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: size.width * 0.4,
-                                        child: SingleChildScrollView(
-                                          reverse: false,
-                                          clipBehavior: Clip.antiAlias,
-                                          physics: BouncingScrollPhysics(),
-                                          scrollDirection: Axis.horizontal,
-                                          child: SelectableText(
-                                            widget.placeOrigin,
-                                            style: GoogleFonts.lexend(
-                                              textStyle: TextStyle(
-                                                color: Color.fromARGB(
-                                                    255, 66, 109, 87),
-                                                fontSize: size.height * 0.022,
-                                                fontWeight: FontWeight.w800,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: size.height * 0.005,
-                                  ),
-                                  Divider(
-                                    thickness: 1.2,
-                                    color: Color.fromARGB(255, 238, 227, 79),
-                                  ),
-                                  SizedBox(
-                                    height: size.height * 0.01,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            bottom: size.height * 0.005),
-                                        child: Text(
-                                          'Grade',
-                                          style: GoogleFonts.lexend(
-                                            textStyle: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 66, 109, 87),
-                                              fontSize: size.height * 0.025,
-                                              fontWeight: FontWeight.w800,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Text(
-                                        widget.grade,
+                                    width: 128.w,
+                                    child: SingleChildScrollView(
+                                      reverse: true,
+                                      clipBehavior: Clip.antiAlias,
+                                      physics: BouncingScrollPhysics(),
+                                      scrollDirection: Axis.horizontal,
+                                      child: SelectableText(
+                                        widget.currentPrice,
                                         style: GoogleFonts.lexend(
                                           textStyle: TextStyle(
                                             color: Color.fromARGB(
                                                 255, 66, 109, 87),
-                                            fontSize: size.height * 0.022,
+                                            fontSize: 13.fs,
                                             fontWeight: FontWeight.w800,
                                           ),
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: size.height * 0.005,
-                                  ),
-                                  Divider(
-                                    thickness: 1.2,
-                                    color: Color.fromARGB(255, 238, 227, 79),
-                                  ),
-                                  SizedBox(
-                                    height: size.height * 0.01,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            bottom: size.height * 0.005),
-                                        child: Text(
-                                          'Weight',
-                                          style: GoogleFonts.lexend(
-                                            textStyle: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 66, 109, 87),
-                                              fontSize: size.height * 0.025,
-                                              fontWeight: FontWeight.w800,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: size.width * 0.3,
-                                        child: SingleChildScrollView(
-                                          reverse: false,
-                                          clipBehavior: Clip.antiAlias,
-                                          physics: BouncingScrollPhysics(),
-                                          scrollDirection: Axis.horizontal,
-                                          child: SelectableText(
-                                            widget.weight,
-                                            style: GoogleFonts.lexend(
-                                              textStyle: TextStyle(
-                                                color: Color.fromARGB(
-                                                    255, 66, 109, 87),
-                                                fontSize: size.height * 0.022,
-                                                fontWeight: FontWeight.w800,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: size.height * 0.005,
-                                  ),
-                                  Divider(
-                                    thickness: 1.2,
-                                    color: Color.fromARGB(255, 238, 227, 79),
-                                  ),
-                                  SizedBox(
-                                    height: size.height * 0.01,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            bottom: size.height * 0.005),
-                                        child: Text(
-                                          'Status Auction',
-                                          style: GoogleFonts.lexend(
-                                            textStyle: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 66, 109, 87),
-                                              fontSize: size.height * 0.025,
-                                              fontWeight: FontWeight.w800,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      if (widget.status == true) ...[
-                                        Row(
-                                          children: [
-                                            Image(
-                                              height: size.width * 0.06,
-                                              width: size.width * 0.06,
-                                              image: AssetImage(
-                                                  'lib/imgs/check.png'),
-                                            ),
-                                            SizedBox(
-                                              width: size.width * 0.0225,
-                                            ),
-                                            Text(
-                                              'Open',
-                                              style: GoogleFonts.lexend(
-                                                textStyle: TextStyle(
-                                                  color: Color.fromARGB(
-                                                      255, 66, 109, 87),
-                                                  fontSize: size.height * 0.022,
-                                                  fontWeight: FontWeight.w800,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ] else ...[
-                                        Row(
-                                          children: [
-                                            Image(
-                                              height: size.width * 0.06,
-                                              width: size.width * 0.06,
-                                              image: AssetImage(
-                                                  'lib/imgs/remove.png'),
-                                            ),
-                                            SizedBox(
-                                              width: size.width * 0.0225,
-                                            ),
-                                            Text(
-                                              'Close',
-                                              style: GoogleFonts.lexend(
-                                                textStyle: TextStyle(
-                                                  color: Color.fromARGB(
-                                                      255, 66, 109, 87),
-                                                  fontSize: size.height * 0.022,
-                                                  fontWeight: FontWeight.w800,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ]
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: size.height * 0.005,
-                                  ),
-                                  Divider(
-                                    thickness: 1.2,
-                                    color: Color.fromARGB(255, 238, 227, 79),
-                                  ),
-                                  SizedBox(
-                                    height: size.height * 0.01,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            bottom: size.height * 0.005),
-                                        child: Text(
-                                          'End at',
-                                          style: GoogleFonts.lexend(
-                                            textStyle: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 66, 109, 87),
-                                              fontSize: size.height * 0.025,
-                                              fontWeight: FontWeight.w800,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Text(
-                                        widget.endAt,
-                                        style: GoogleFonts.lexend(
-                                          textStyle: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 66, 109, 87),
-                                            fontSize: size.height * 0.022,
-                                            fontWeight: FontWeight.w800,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: size.height * 0.005,
-                                  ),
-                                  Divider(
-                                    thickness: 1.2,
-                                    color: Color.fromARGB(255, 238, 227, 79),
-                                  ),
-                                  SizedBox(
-                                    height: size.height * 0.01,
+                                    ),
                                   ),
                                 ],
                               ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: size.height * 0.0125,
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Divider(
+                                thickness: 1.2,
+                                color: Color.fromARGB(255, 238, 227, 79),
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      bottom: 1.h,
+                                    ),
+                                    child: Text(
+                                      'Increment Price',
+                                      style: GoogleFonts.lexend(
+                                        textStyle: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 66, 109, 87),
+                                          fontSize: 13.fs,
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 128.w,
+                                    child: SingleChildScrollView(
+                                      reverse: true,
+                                      clipBehavior: Clip.antiAlias,
+                                      physics: BouncingScrollPhysics(),
+                                      scrollDirection: Axis.horizontal,
+                                      child: SelectableText(
+                                        widget.incrementPrice,
+                                        style: GoogleFonts.lexend(
+                                          textStyle: TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 66, 109, 87),
+                                            fontSize: 13.fs,
+                                            fontWeight: FontWeight.w800,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Divider(
+                                thickness: 1.2,
+                                color: Color.fromARGB(255, 238, 227, 79),
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      bottom: 1.h,
+                                    ),
+                                    child: Text(
+                                      'Buy Now',
+                                      style: GoogleFonts.lexend(
+                                        textStyle: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 66, 109, 87),
+                                          fontSize: 13.fs,
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 128.w,
+                                    child: SingleChildScrollView(
+                                      reverse: true,
+                                      clipBehavior: Clip.antiAlias,
+                                      physics: BouncingScrollPhysics(),
+                                      scrollDirection: Axis.horizontal,
+                                      child: SelectableText(
+                                        widget.buyNowPrice,
+                                        style: GoogleFonts.lexend(
+                                          textStyle: TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 66, 109, 87),
+                                            fontSize: 13.fs,
+                                            fontWeight: FontWeight.w800,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Divider(
+                                thickness: 1.2,
+                                color: Color.fromARGB(255, 238, 227, 79),
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      bottom: 1.h,
+                                    ),
+                                    child: Text(
+                                      'From',
+                                      style: GoogleFonts.lexend(
+                                        textStyle: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 66, 109, 87),
+                                          fontSize: 13.fs,
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 128.w,
+                                    child: SingleChildScrollView(
+                                      reverse: false,
+                                      clipBehavior: Clip.antiAlias,
+                                      physics: BouncingScrollPhysics(),
+                                      scrollDirection: Axis.horizontal,
+                                      child: SelectableText(
+                                        widget.placeOrigin,
+                                        style: GoogleFonts.lexend(
+                                          textStyle: TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 66, 109, 87),
+                                            fontSize: 13.fs,
+                                            fontWeight: FontWeight.w800,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Divider(
+                                thickness: 1.2,
+                                color: Color.fromARGB(255, 238, 227, 79),
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      bottom: 1.h,
+                                    ),
+                                    child: Text(
+                                      'Grade',
+                                      style: GoogleFonts.lexend(
+                                        textStyle: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 66, 109, 87),
+                                          fontSize: 13.fs,
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    widget.grade,
+                                    style: GoogleFonts.lexend(
+                                      textStyle: TextStyle(
+                                        color: Color.fromARGB(255, 66, 109, 87),
+                                        fontSize: 13.fs,
+                                        fontWeight: FontWeight.w800,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Divider(
+                                thickness: 1.2,
+                                color: Color.fromARGB(255, 238, 227, 79),
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      bottom: 1.h,
+                                    ),
+                                    child: Text(
+                                      'Weight',
+                                      style: GoogleFonts.lexend(
+                                        textStyle: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 66, 109, 87),
+                                          fontSize: 13.fs,
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 128.w,
+                                    child: SingleChildScrollView(
+                                      reverse: true,
+                                      clipBehavior: Clip.antiAlias,
+                                      physics: BouncingScrollPhysics(),
+                                      scrollDirection: Axis.horizontal,
+                                      child: SelectableText(
+                                        widget.weight,
+                                        style: GoogleFonts.lexend(
+                                          textStyle: TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 66, 109, 87),
+                                            fontSize: 13.fs,
+                                            fontWeight: FontWeight.w800,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Divider(
+                                thickness: 1.2,
+                                color: Color.fromARGB(255, 238, 227, 79),
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      bottom: 1.h,
+                                    ),
+                                    child: Text(
+                                      'Status Auction',
+                                      style: GoogleFonts.lexend(
+                                        textStyle: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 66, 109, 87),
+                                          fontSize: 13.fs,
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  if (widget.status == true) ...[
+                                    Row(
+                                      children: [
+                                        Image(
+                                          height: 16.w,
+                                          width: 16.w,
+                                          image:
+                                              AssetImage('lib/imgs/check.png'),
+                                        ),
+                                        SizedBox(
+                                          width: 8.w,
+                                        ),
+                                        Text(
+                                          'Open',
+                                          style: GoogleFonts.lexend(
+                                            textStyle: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255, 66, 109, 87),
+                                              fontSize: 13.fs,
+                                              fontWeight: FontWeight.w800,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ] else ...[
+                                    Row(
+                                      children: [
+                                        Image(
+                                          height: 16.w,
+                                          width: 16.w,
+                                          image:
+                                              AssetImage('lib/imgs/remove.png'),
+                                        ),
+                                        SizedBox(
+                                          width: 8.w,
+                                        ),
+                                        Text(
+                                          'Closed',
+                                          style: GoogleFonts.lexend(
+                                            textStyle: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255, 66, 109, 87),
+                                              fontSize: 13.fs,
+                                              fontWeight: FontWeight.w800,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ]
+                                ],
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Divider(
+                                thickness: 1.2,
+                                color: Color.fromARGB(255, 238, 227, 79),
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      bottom: 1.h,
+                                    ),
+                                    child: Text(
+                                      'End at',
+                                      style: GoogleFonts.lexend(
+                                        textStyle: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 66, 109, 87),
+                                          fontSize: 13.fs,
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    widget.endAt,
+                                    style: GoogleFonts.lexend(
+                                      textStyle: TextStyle(
+                                        color: Color.fromARGB(255, 66, 109, 87),
+                                        fontSize: 13.fs,
+                                        fontWeight: FontWeight.w800,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                      if (widget.status == true) ...[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            GestureDetector(
-                              onTap: () {},
-                              child: Container(
-                                height: size.height * 0.065,
-                                width: size.width * 0.375,
-                                decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 240, 204, 88),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    "Buy Now",
-                                    style: GoogleFonts.lexend(
-                                      textStyle: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: size.height * 0.0235,
-                                        fontWeight: FontWeight.w800,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => MakeABid(
-                                        currentPrice: widget.currentPrice,
-                                        incrementPrice: widget.incrementPrice),
-                                  ),
-                                );
-                              },
-                              child: Container(
-                                height: size.height * 0.065,
-                                width: size.width * 0.375,
-                                decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 66, 109, 87),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    "Offer Bid",
-                                    style: GoogleFonts.lexend(
-                                      textStyle: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: size.height * 0.0235,
-                                        fontWeight: FontWeight.w800,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ] else ...[
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => CloseAuction(
-                                    currentPrice: widget.currentPrice,
-                                    name: widget.name),
-                              ),
-                            );
-                          },
-                          child: Container(
-                            height: size.height * 0.065,
-                            width: size.width * 1,
-                            decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 66, 109, 87),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "Close Auction",
-                                style: GoogleFonts.lexend(
-                                  textStyle: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: size.height * 0.024,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
                     ],
                   ),
                 ),
               ),
+              SizedBox(
+                height: 13.h,
+              ),
+              if (widget.status == true) ...[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BuyNow(
+                              buyNowPrice: widget.buyNowPrice,
+                            ),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: 40.h,
+                        width: 153.w,
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 240, 204, 88),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Buy Now",
+                            style: GoogleFonts.lexend(
+                              textStyle: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15.fs,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 14.w,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MakeABid(
+                                currentPrice: widget.currentPrice,
+                                incrementPrice: widget.incrementPrice),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: 40.h,
+                        width: 153.w,
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 66, 109, 87),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Offer Bid",
+                            style: GoogleFonts.lexend(
+                              textStyle: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15.fs,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ] else ...[
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CloseAuction(
+                            currentPrice: widget.currentPrice,
+                            name: widget.name),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    height: 40.h,
+                    width: 320.w,
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 66, 109, 87),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Close Auction",
+                        style: GoogleFonts.lexend(
+                          textStyle: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15.fs,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ],
           ),
         ),
