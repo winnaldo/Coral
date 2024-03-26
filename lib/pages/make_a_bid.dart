@@ -291,6 +291,14 @@ class _MakeABidState extends State<MakeABid> {
                                     width: 220.w,
                                     child: TextField(
                                       keyboardType: TextInputType.number,
+                                      style: GoogleFonts.montserrat(
+                                        textStyle: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 66, 109, 87),
+                                          fontSize: 11.fs,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
                                       cursorColor:
                                           Color.fromARGB(255, 34, 96, 12),
                                       decoration: InputDecoration(

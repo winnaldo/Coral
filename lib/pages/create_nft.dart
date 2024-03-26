@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
-import 'package:coral_ui/pages/homepage.dart';
-import 'package:coral_ui/pages/navigation.dart';
 import 'package:coral_ui/pages/notifications/success_nft.dart';
+import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -34,50 +32,47 @@ class _CreateNFTState extends State<CreateNFT> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
-    // screen dimensions
-    bool isMobile = size.width <= 768;
-    bool isTablet = size.width > 768 && size.width <= 992;
-    bool isDesktop = size.width >= 992;
-
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.grey[100],
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(
-            top: size.height * 0.05,
-            right: size.width * 0.04,
-            left: size.width * 0.04,
-            bottom: size.width * 0.04,
+            top: 24.h,
+            right: 12.w,
+            left: 12.w,
+            bottom: 18.h,
           ),
           child: Column(
             children: [
               Row(
                 children: [
+                  SizedBox(
+                    width: 6.w,
+                  ),
                   Image(
-                    height: size.width * 0.07,
-                    width: size.width * 0.07,
+                    height: 14.w,
+                    width: 14.w,
                     image: AssetImage('lib/imgs/back.png'),
                     color: Color.fromARGB(255, 66, 109, 87),
                   ),
                   SizedBox(
-                    width: size.width * 0.05,
+                    width: 16.w,
                   ),
                   Image(
-                    height: size.width * 0.095,
-                    width: size.width * 0.095,
+                    height: 22.w,
+                    width: 22.w,
                     image: AssetImage('lib/imgs/add2.png'),
                   ),
                   SizedBox(
-                    width: size.width * 0.04,
+                    width: 10.w,
                   ),
                   Text(
                     "Create a Sale",
                     style: GoogleFonts.lexend(
                       textStyle: TextStyle(
                         color: Color.fromARGB(255, 66, 109, 87),
-                        fontSize: size.height * 0.0315,
+                        fontSize: 15.fs,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -85,76 +80,68 @@ class _CreateNFTState extends State<CreateNFT> {
                 ],
               ),
               SizedBox(
-                height: size.height * 0.025,
+                height: 12.h,
               ),
               Container(
-                height: size.height * 0.7,
-                width: size.width * 0.875,
+                height: 496.h,
+                width: 320.w,
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 255, 253, 248),
                   borderRadius: BorderRadius.all(
-                    Radius.circular(20),
+                    Radius.circular(12),
                   ),
                 ),
                 child: Padding(
                   padding: EdgeInsets.only(
-                    top: size.height * 0.05,
-                    right: size.width * 0.075,
-                    left: size.width * 0.075,
-                    bottom: size.width * 0.075,
+                    top: 16.h,
+                    right: 14.w,
+                    left: 14.w,
+                    bottom: 12.h,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      SizedBox(
+                        height: 16.h,
+                      ),
                       Column(
                         children: [
                           Image(
-                            height: size.width * 0.29,
-                            width: size.width * 0.29,
+                            height: 92.w,
+                            width: 92.w,
                             image: AssetImage('lib/imgs/coin.png'),
                           ),
                           SizedBox(
-                            height: size.height * 0.025,
+                            height: 16.h,
                           ),
                           Text(
                             "Generate your NFT!",
                             style: GoogleFonts.lexend(
                               textStyle: TextStyle(
                                 color: Color.fromARGB(255, 66, 109, 87),
-                                fontSize: size.height * 0.0235,
+                                fontSize: 15.h,
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
                           ),
+                          SizedBox(
+                            height: 6.h,
+                          ),
                           Text(
                             "Every product that listed on Coral is highly protected and certified for its information using NFT",
                             textAlign: TextAlign.center,
-                            style: GoogleFonts.lexend(
+                            style: GoogleFonts.montserrat(
                               textStyle: TextStyle(
                                 color: Color.fromARGB(255, 66, 109, 87),
-                                fontSize: size.height * 0.016,
+                                fontSize: 11.fs,
                                 fontWeight: FontWeight.w600,
+                                height: 1.35,
                               ),
                             ),
                           ),
                           SizedBox(
-                            height: size.height * 0.015,
+                            height: 18.h,
                           ),
-                          Text(
-                            "Before create your sale, you have to create NFT first, Proceed to Continue",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.lexend(
-                              textStyle: TextStyle(
-                                color: Color.fromARGB(255, 66, 109, 87),
-                                fontSize: size.height * 0.016,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
                           Row(
                             children: [
                               Text(
@@ -162,48 +149,36 @@ class _CreateNFTState extends State<CreateNFT> {
                                 style: GoogleFonts.lexend(
                                   textStyle: TextStyle(
                                     color: Color.fromARGB(255, 66, 109, 87),
-                                    fontSize: size.height * 0.0235,
+                                    fontSize: 15.fs,
                                     fontWeight: FontWeight.w800,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: size.width * 0.015,
-                              ),
-                              Text(
-                                "(Optional)",
-                                style: GoogleFonts.lexend(
-                                  textStyle: TextStyle(
-                                    color: Color.fromARGB(255, 66, 109, 87),
-                                    fontSize: size.height * 0.017,
-                                    fontWeight: FontWeight.w700,
                                   ),
                                 ),
                               ),
                             ],
                           ),
                           SizedBox(
-                            height: size.height * 0.0075,
+                            height: 3.h,
                           ),
                           Container(
-                            height: size.height * 0.15,
-                            width: size.width * 1,
+                            height: 100.h,
+                            width: 320.w,
                             decoration: BoxDecoration(
                               color: Color.fromARGB(255, 252, 250, 237),
                               borderRadius: BorderRadius.all(
-                                Radius.circular(20),
+                                Radius.circular(12),
                               ),
                             ),
                             child: Padding(
                               padding: EdgeInsets.symmetric(
-                                  vertical: size.width * 0.01,
-                                  horizontal: size.width * 0.035),
+                                vertical: 3.h,
+                                horizontal: 12.w,
+                              ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   SizedBox(
-                                    height: size.height * 0.135,
-                                    width: size.width * 1,
+                                    height: 90.h,
+                                    width: 320.w,
                                     child: TextFormField(
                                       expands: true,
                                       maxLines: null,
@@ -214,9 +189,17 @@ class _CreateNFTState extends State<CreateNFT> {
                                         border: InputBorder.none,
                                         hintText: 'Insert Here',
                                         hintStyle: TextStyle(
-                                          fontSize: size.height * 0.0185,
+                                          fontSize: 11.fs,
                                           fontWeight: FontWeight.w600,
                                           color: Color.fromARGB(92, 34, 96, 12),
+                                        ),
+                                      ),
+                                      style: GoogleFonts.montserrat(
+                                        textStyle: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 66, 109, 87),
+                                          fontSize: 11.fs,
+                                          fontWeight: FontWeight.w500,
                                         ),
                                       ),
                                     ),
@@ -225,47 +208,59 @@ class _CreateNFTState extends State<CreateNFT> {
                               ),
                             ),
                           ),
-                          SizedBox(
-                            height: size.height * 0.0125,
+                        ],
+                      ),
+                      Text(
+                        "Before create your sale, you have to create NFT first, Proceed to Continue",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                            color: Color.fromARGB(255, 66, 109, 87),
+                            fontSize: 11.fs,
+                            fontWeight: FontWeight.w600,
+                            height: 1.35,
                           ),
-                          GestureDetector(
-                            onTap: () {
-                              _isLoading ? null : _onSubmit();
-                            },
-                            child: Container(
-                              height: size.height * 0.0645,
-                              width: size.width * 1,
-                              decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 66, 109, 87),
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: Center(
-                                child: _isLoading
-                                    ? Container(
-                                        width: 24,
-                                        height: 24,
-                                        padding: const EdgeInsets.all(2.0),
-                                        child: const CircularProgressIndicator(
-                                          color: Colors.white,
-                                          strokeWidth: 3,
-                                        ),
-                                      )
-                                    : Text(
-                                        "Generate",
-                                        style: GoogleFonts.lexend(
-                                          textStyle: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: size.height * 0.0235,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                        ),
-                                      ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 12.h,
+              ),
+              GestureDetector(
+                onTap: () {
+                  _isLoading ? null : _onSubmit();
+                },
+                child: Container(
+                  height: 40.h,
+                  width: 320.w,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 66, 109, 87),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Center(
+                    child: _isLoading
+                        ? Container(
+                            width: 20.w,
+                            height: 20.w,
+                            padding: const EdgeInsets.all(2.0),
+                            child: const CircularProgressIndicator(
+                              color: Colors.white,
+                              strokeWidth: 3,
+                            ),
+                          )
+                        : Text(
+                            "Generate",
+                            style: GoogleFonts.lexend(
+                              textStyle: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15.fs,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ),
-                        ],
-                      ),
-                    ],
                   ),
                 ),
               ),

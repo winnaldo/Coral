@@ -34,8 +34,8 @@ class SuccessBid extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image(
-                    height: 92.w,
-                    width: 92.w,
+                    height: 88.w,
+                    width: 88.w,
                     image: AssetImage('lib/imgs/check.png'),
                   ),
                   Text(
@@ -46,7 +46,7 @@ class SuccessBid extends StatelessWidget {
                     style: GoogleFonts.breeSerif(
                       textStyle: TextStyle(
                         color: Color.fromARGB(255, 66, 109, 87),
-                        fontSize: 40.fs,
+                        fontSize: 36.fs,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -54,10 +54,10 @@ class SuccessBid extends StatelessWidget {
                   Text(
                     "Successfully submit your bid offer, keep track your offer and enjoy using Coral as decentralized fishery and aquaculture platform ",
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.lexend(
+                    style: GoogleFonts.montserrat(
                       textStyle: TextStyle(
                         color: Color.fromARGB(255, 66, 109, 87),
-                        fontSize: 11.fs,
+                        fontSize: 10.fs,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -79,7 +79,7 @@ class SuccessBid extends StatelessWidget {
                               style: GoogleFonts.lexend(
                                 textStyle: TextStyle(
                                   color: Color.fromARGB(255, 66, 109, 87),
-                                  fontSize: 13.fs,
+                                  fontSize: 12.fs,
                                   fontWeight: FontWeight.w800,
                                 ),
                               ),
@@ -89,7 +89,7 @@ class SuccessBid extends StatelessWidget {
                               style: GoogleFonts.lexend(
                                 textStyle: TextStyle(
                                   color: Color.fromARGB(255, 66, 109, 87),
-                                  fontSize: 13.fs,
+                                  fontSize: 12.fs,
                                   fontWeight: FontWeight.w800,
                                 ),
                               ),
@@ -114,7 +114,7 @@ class SuccessBid extends StatelessWidget {
                               style: GoogleFonts.lexend(
                                 textStyle: TextStyle(
                                   color: Color.fromARGB(255, 66, 109, 87),
-                                  fontSize: 13.fs,
+                                  fontSize: 12.fs,
                                   fontWeight: FontWeight.w800,
                                 ),
                               ),
@@ -130,7 +130,7 @@ class SuccessBid extends StatelessWidget {
                                   style: GoogleFonts.lexend(
                                     textStyle: TextStyle(
                                       color: Color.fromARGB(255, 66, 109, 87),
-                                      fontSize: 13.fs,
+                                      fontSize: 12.fs,
                                       fontWeight: FontWeight.w800,
                                     ),
                                   ),
@@ -189,7 +189,7 @@ class SuccessBid extends StatelessWidget {
                               style: GoogleFonts.lexend(
                                 textStyle: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 15.fs,
+                                  fontSize: 14.fs,
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),

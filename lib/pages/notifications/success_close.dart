@@ -32,8 +32,8 @@ class SuccessClose extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image(
-                    height: 92.w,
-                    width: 92.w,
+                    height: 88.w,
+                    width: 88.w,
                     image: const AssetImage('lib/imgs/check.png'),
                   ),
                   Text(
@@ -44,7 +44,7 @@ class SuccessClose extends StatelessWidget {
                     style: GoogleFonts.breeSerif(
                       textStyle: TextStyle(
                         color: const Color.fromARGB(255, 66, 109, 87),
-                        fontSize: 40.fs,
+                        fontSize: 38.fs,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -55,7 +55,7 @@ class SuccessClose extends StatelessWidget {
                     style: GoogleFonts.montserrat(
                       textStyle: TextStyle(
                         color: const Color.fromARGB(255, 66, 109, 87),
-                        fontSize: 11.fs,
+                        fontSize: 10.fs,
                         fontWeight: FontWeight.w600,
                         height: 1.35,
                       ),
@@ -78,7 +78,7 @@ class SuccessClose extends StatelessWidget {
                               style: GoogleFonts.lexend(
                                 textStyle: TextStyle(
                                   color: const Color.fromARGB(255, 66, 109, 87),
-                                  fontSize: 13.fs,
+                                  fontSize: 12.fs,
                                   fontWeight: FontWeight.w800,
                                 ),
                               ),
@@ -88,7 +88,7 @@ class SuccessClose extends StatelessWidget {
                               style: GoogleFonts.lexend(
                                 textStyle: TextStyle(
                                   color: const Color.fromARGB(255, 66, 109, 87),
-                                  fontSize: 13.fs,
+                                  fontSize: 12.fs,
                                   fontWeight: FontWeight.w800,
                                 ),
                               ),
@@ -113,7 +113,7 @@ class SuccessClose extends StatelessWidget {
                               style: GoogleFonts.lexend(
                                 textStyle: TextStyle(
                                   color: const Color.fromARGB(255, 66, 109, 87),
-                                  fontSize: 13.fs,
+                                  fontSize: 12.fs,
                                   fontWeight: FontWeight.w800,
                                 ),
                               ),
@@ -130,7 +130,7 @@ class SuccessClose extends StatelessWidget {
                                     textStyle: TextStyle(
                                       color: const Color.fromARGB(
                                           255, 66, 109, 87),
-                                      fontSize: 13.fs,
+                                      fontSize: 12.fs,
                                       fontWeight: FontWeight.w800,
                                     ),
                                   ),
@@ -176,8 +176,8 @@ class SuccessClose extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image(
-                              height: 16.w,
-                              width: 16.w,
+                              height: 15.w,
+                              width: 15.w,
                               image: const AssetImage('lib/imgs/home.png'),
                               color: Colors.white,
                             ),
@@ -189,7 +189,7 @@ class SuccessClose extends StatelessWidget {
                               style: GoogleFonts.lexend(
                                 textStyle: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 15.fs,
+                                  fontSize: 14.fs,
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
