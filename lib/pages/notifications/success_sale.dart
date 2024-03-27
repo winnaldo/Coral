@@ -182,7 +182,7 @@ class SuccessSale extends StatelessWidget {
                               color: Colors.white,
                             ),
                             SizedBox(
-                              width: 12.w,
+                              width: 10.w,
                             ),
                             Text(
                               "Back to Home",

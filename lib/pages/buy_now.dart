@@ -218,7 +218,7 @@ class _BuyNowState extends State<BuyNow> {
                                   textStyle: TextStyle(
                                     color:
                                         const Color.fromARGB(255, 66, 109, 87),
-                                    fontSize: 11.fs,
+                                    fontSize: 10.fs,
                                     fontWeight: FontWeight.w600,
                                     height: 1.35,
                                   ),

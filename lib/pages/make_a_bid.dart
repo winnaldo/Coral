@@ -295,7 +295,7 @@ class _MakeABidState extends State<MakeABid> {
                                         textStyle: TextStyle(
                                           color:
                                               Color.fromARGB(255, 66, 109, 87),
-                                          fontSize: 11.fs,
+                                          fontSize: 12.fs,
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),
@@ -306,7 +306,7 @@ class _MakeABidState extends State<MakeABid> {
                                         border: InputBorder.none,
                                         hintText: 'Insert Here',
                                         hintStyle: TextStyle(
-                                          fontSize: 13.fs,
+                                          fontSize: 12.fs,
                                           fontWeight: FontWeight.w600,
                                           color: Color.fromARGB(92, 34, 96, 12),
                                         ),
@@ -318,7 +318,7 @@ class _MakeABidState extends State<MakeABid> {
                                     style: GoogleFonts.lexend(
                                       textStyle: TextStyle(
                                         color: Color.fromARGB(255, 66, 109, 87),
-                                        fontSize: 13.fs,
+                                        fontSize: 12.fs,
                                         fontWeight: FontWeight.w700,
                                       ),
                                     ),
@@ -337,7 +337,7 @@ class _MakeABidState extends State<MakeABid> {
                 ),
               ),
               SizedBox(
-                height: 13.h,
+                height: 12.h,
               ),
               GestureDetector(
                 onTap: () {

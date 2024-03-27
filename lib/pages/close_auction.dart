@@ -350,8 +350,8 @@ class _CloseAuctionState extends State<CloseAuction> {
                   child: Center(
                     child: _isLoading
                         ? Container(
-                            width: 21.w,
-                            height: 21.w,
+                            width: 20.w,
+                            height: 20.w,
                             padding: const EdgeInsets.all(2.0),
                             child: const CircularProgressIndicator(
                               color: Colors.white,
@@ -363,7 +363,7 @@ class _CloseAuctionState extends State<CloseAuction> {
                             style: GoogleFonts.lexend(
                               textStyle: TextStyle(
                                 color: Colors.white,
-                                fontSize: 15.fs,
+                                fontSize: 14.fs,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),

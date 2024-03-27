@@ -176,13 +176,13 @@ class SuccessBid extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image(
-                              height: 16.w,
-                              width: 16.w,
+                              height: 15.w,
+                              width: 15.w,
                               image: AssetImage('lib/imgs/home.png'),
                               color: Colors.white,
                             ),
                             SizedBox(
-                              width: 12.w,
+                              width: 10.w,
                             ),
                             Text(
                               "Back to Home",

@@ -23,7 +23,7 @@ class _YourBidsState extends State<YourBids> {
             top: 24.h,
             right: 18.w,
             left: 18.w,
-            bottom: 18.h,
+            bottom: 22.h,
           ),
           child: Column(
             children: [

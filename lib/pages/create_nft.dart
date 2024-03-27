@@ -107,12 +107,12 @@ class _CreateNFTState extends State<CreateNFT> {
                       Column(
                         children: [
                           Image(
-                            height: 92.w,
-                            width: 92.w,
+                            height: 88.w,
+                            width: 88.w,
                             image: AssetImage('lib/imgs/coin.png'),
                           ),
                           SizedBox(
-                            height: 16.h,
+                            height: 14.h,
                           ),
                           Text(
                             "Generate your NFT!",
@@ -134,7 +134,7 @@ class _CreateNFTState extends State<CreateNFT> {
                               textStyle: TextStyle(
                                 color: Color.fromARGB(255, 66, 109, 87),
                                 fontSize: 11.fs,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w500,
                                 height: 1.35,
                               ),
                             ),
@@ -216,7 +216,7 @@ class _CreateNFTState extends State<CreateNFT> {
                         style: GoogleFonts.montserrat(
                           textStyle: TextStyle(
                             color: Color.fromARGB(255, 66, 109, 87),
-                            fontSize: 11.fs,
+                            fontSize: 10.fs,
                             fontWeight: FontWeight.w600,
                             height: 1.35,
                           ),

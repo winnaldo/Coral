@@ -1,13 +1,8 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'dart:ui';
-
-import 'package:coral_ui/pages/homepage.dart';
 import 'package:coral_ui/pages/navigation.dart';
-import 'package:coral_ui/pages/profile_page.dart';
+import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Login extends StatefulWidget {
@@ -38,13 +33,6 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
-    // screen dimensions
-    bool isMobile = size.width <= 768;
-    bool isTablet = size.width > 768 && size.width <= 992;
-    bool isDesktop = size.width >= 992;
-
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
@@ -60,17 +48,15 @@ class _LoginState extends State<Login> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                height: size.height * 0.001,
+                height: 1.h,
               ),
               Center(
-                child: Container(
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(
-                      sigmaX: 4,
-                      sigmaY: 4,
-                    ),
-                    child: Container(),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(
+                    sigmaX: 4,
+                    sigmaY: 4,
                   ),
+                  child: Container(),
                 ),
               ),
               Column(
@@ -79,8 +65,8 @@ class _LoginState extends State<Login> {
                     tag: 'coral_logo',
                     child: Center(
                       child: Container(
-                        height: size.height * 0.2,
-                        width: size.width * 0.75,
+                        height: 104.h,
+                        width: 208.w,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage('lib/imgs/LogoCoral2.png'),
@@ -90,11 +76,11 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   SizedBox(
-                    height: size.height * 0.02,
+                    height: 8.h,
                   ),
                   Container(
-                    height: size.height * 0.5,
-                    width: size.width * 0.85,
+                    height: 320.h,
+                    width: 290.w,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.all(
@@ -103,8 +89,8 @@ class _LoginState extends State<Login> {
                     ),
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                        horizontal: size.width * 0.05,
-                        vertical: size.height * 0.015,
+                        horizontal: 16.w,
+                        vertical: 16.h,
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -112,11 +98,11 @@ class _LoginState extends State<Login> {
                           Column(
                             children: [
                               SizedBox(
-                                height: size.height * 0.02,
+                                height: 12.h,
                               ),
                               Container(
-                                height: size.height * 0.1,
-                                width: size.width * 0.5,
+                                height: 52.h,
+                                width: 104.w,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
                                     image: AssetImage('lib/imgs/login.png'),
@@ -125,22 +111,24 @@ class _LoginState extends State<Login> {
                                 ),
                               ),
                               SizedBox(
-                                height: size.height * 0.02,
+                                height: 12.h,
                               ),
                               Container(
-                                height: size.height * 0.11,
-                                width: size.width * 1,
+                                height: 60.h,
+                                width: 320.w,
                                 decoration: BoxDecoration(
                                   color: Color.fromARGB(255, 252, 250, 237),
                                   borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
+                                    Radius.circular(12),
                                   ),
                                 ),
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(
-                                      vertical: size.height * 0.01,
-                                      horizontal: size.width * 0.035),
+                                    vertical: 5.h,
+                                    horizontal: 12.w,
+                                  ),
                                   child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
@@ -150,19 +138,27 @@ class _LoginState extends State<Login> {
                                           textStyle: TextStyle(
                                               color: Color.fromARGB(
                                                   255, 34, 96, 12),
-                                              fontSize: size.width * 0.035,
+                                              fontSize: 10.fs,
                                               fontWeight: FontWeight.bold),
                                         ),
                                       ),
                                       SizedBox(
-                                        height: size.height * 0.01,
+                                        height: 1.h,
                                       ),
                                       SizedBox(
-                                        height: size.height * 0.05,
-                                        width: size.width * 1,
+                                        height: 35.h,
+                                        width: 320.w,
                                         child: TextField(
                                           cursorColor:
                                               Color.fromARGB(255, 34, 96, 12),
+                                          style: GoogleFonts.montserrat(
+                                            textStyle: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255, 66, 109, 87),
+                                              fontSize: 12.fs,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
                                           decoration: InputDecoration(
                                             icon: Icon(
                                               Icons.key,
@@ -173,7 +169,7 @@ class _LoginState extends State<Login> {
                                             border: InputBorder.none,
                                             hintText: 'Address',
                                             hintStyle: TextStyle(
-                                              fontSize: size.height * 0.02,
+                                              fontSize: 12.fs,
                                               fontWeight: FontWeight.w600,
                                               color: Color.fromARGB(
                                                   92, 34, 96, 12),
@@ -189,19 +185,18 @@ class _LoginState extends State<Login> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  SizedBox(
-                                    width: size.width * 0.00001,
-                                  ),
+                                  SizedBox(),
                                   Row(
                                     children: [
                                       Text(
                                         "Remember Address",
                                         style: GoogleFonts.lexend(
                                           textStyle: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 34, 96, 12),
-                                              fontSize: size.height * 0.0175,
-                                              fontWeight: FontWeight.w600),
+                                            color:
+                                                Color.fromARGB(255, 34, 96, 12),
+                                            fontSize: 10.fs,
+                                            fontWeight: FontWeight.w600,
+                                          ),
                                         ),
                                       ),
                                       Checkbox(
@@ -239,19 +234,17 @@ class _LoginState extends State<Login> {
                                     _isLoading ? null : _onSubmit();
                                   },
                                   child: Container(
-                                    height: size.height * 0.0645,
-                                    width: size.width * 0.7,
+                                    height: 40.h,
+                                    width: 260.w,
                                     decoration: BoxDecoration(
                                       color: Color.fromARGB(255, 66, 109, 87),
                                       borderRadius: BorderRadius.circular(12),
                                     ),
                                     child: Center(
                                       child: _isLoading
-                                          ? Container(
-                                              width: 24,
-                                              height: 24,
-                                              padding:
-                                                  const EdgeInsets.all(2.0),
+                                          ? SizedBox(
+                                              width: 18.w,
+                                              height: 18.w,
                                               child:
                                                   const CircularProgressIndicator(
                                                 color: Colors.white,
@@ -263,22 +256,21 @@ class _LoginState extends State<Login> {
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Image(
-                                                  height: size.width * 0.07,
-                                                  width: size.width * 0.07,
+                                                  height: 20.w,
+                                                  width: 20.w,
                                                   image: AssetImage(
                                                       'lib/imgs/door.png'),
                                                   color: Colors.white,
                                                 ),
                                                 SizedBox(
-                                                  width: size.width * 0.015,
+                                                  width: 6.w,
                                                 ),
                                                 Text(
                                                   "Enter",
                                                   style: GoogleFonts.lexend(
                                                     textStyle: TextStyle(
                                                       color: Colors.white,
-                                                      fontSize:
-                                                          size.height * 0.0235,
+                                                      fontSize: 14.fs,
                                                       fontWeight:
                                                           FontWeight.w600,
                                                     ),
@@ -291,38 +283,38 @@ class _LoginState extends State<Login> {
                                 ),
                               ),
                               SizedBox(
-                                height: size.height * 0.0065,
+                                height: 1.h,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
                                     "Unregistered on Coral?",
-                                    style: GoogleFonts.lexend(
+                                    style: GoogleFonts.montserrat(
                                       textStyle: TextStyle(
-                                          color:
-                                              Color.fromARGB(255, 66, 109, 87),
-                                          fontSize: size.height * 0.0155,
-                                          fontWeight: FontWeight.bold),
+                                        color: Color.fromARGB(255, 66, 109, 87),
+                                        fontSize: 10.fs,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
                                   SizedBox(
-                                    width: size.width * 0.0125,
+                                    width: 6.w,
                                   ),
                                   Text(
                                     "Register Here!",
-                                    style: GoogleFonts.lexend(
+                                    style: GoogleFonts.montserrat(
                                       textStyle: TextStyle(
-                                          color:
-                                              Color.fromARGB(255, 1, 211, 176),
-                                          fontSize: size.height * 0.0155,
-                                          fontWeight: FontWeight.bold),
+                                        color: Color.fromARGB(255, 1, 211, 176),
+                                        fontSize: 10.fs,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
                                 ],
                               ),
                               SizedBox(
-                                height: size.height * 0.015,
+                                height: 12.h,
                               ),
                             ],
                           ),
@@ -333,8 +325,8 @@ class _LoginState extends State<Login> {
                 ],
               ),
               Container(
-                height: size.height * 0.1,
-                width: size.width * 0.4,
+                height: 48.h,
+                width: 96.w,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('lib/imgs/NSLAB.png'),

@@ -3,6 +3,7 @@
 import 'dart:ui';
 
 import 'package:coral_ui/pages/login.dart';
+import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -37,13 +38,6 @@ class _Splash_ScreenState extends State<Splash_Screen> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
-    // screen dimensions
-    bool isMobile = size.width <= 768;
-    bool isTablet = size.width > 768 && size.width <= 992;
-    bool isDesktop = size.width >= 992;
-
     return Scaffold(
       body: SafeArea(
         top: false,
@@ -58,19 +52,20 @@ class _Splash_ScreenState extends State<Splash_Screen> {
             alignment: Alignment.bottomCenter,
             children: [
               Center(
-                child: Container(
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
-                    child: Container(),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(
+                    sigmaX: 4,
+                    sigmaY: 4,
                   ),
+                  child: Container(),
                 ),
               ),
               Hero(
                 tag: 'coral_logo',
                 child: Center(
                   child: Container(
-                    height: size.height * 0.2,
-                    width: size.width * 0.8,
+                    height: 104.h,
+                    width: 208.w,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage('lib/imgs/LogoCoral2.png'),
@@ -80,8 +75,8 @@ class _Splash_ScreenState extends State<Splash_Screen> {
                 ),
               ),
               Container(
-                height: size.height * 0.1,
-                width: size.width * 0.4,
+                height: 48.h,
+                width: 96.w,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('lib/imgs/NSLAB.png'),

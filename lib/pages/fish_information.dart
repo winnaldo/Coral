@@ -612,7 +612,7 @@ class _FishInformationState extends State<FishInformation> {
                 ),
               ),
               SizedBox(
-                height: 13.h,
+                height: 12.h,
               ),
               if (widget.status == true) ...[
                 Row(
@@ -712,7 +712,7 @@ class _FishInformationState extends State<FishInformation> {
                         style: GoogleFonts.lexend(
                           textStyle: TextStyle(
                             color: Colors.white,
-                            fontSize: 15.fs,
+                            fontSize: 14.fs,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
