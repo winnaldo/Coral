@@ -270,6 +270,7 @@ class _MakeABidState extends State<MakeABid> {
                           Container(
                             height: 50.h,
                             width: 320.w,
+                            alignment: Alignment.center,
                             decoration: BoxDecoration(
                               color: Color.fromARGB(255, 252, 250, 237),
                               borderRadius: BorderRadius.all(
@@ -287,10 +288,12 @@ class _MakeABidState extends State<MakeABid> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   SizedBox(
-                                    height: 50.h,
+                                    height: 20.h,
                                     width: 220.w,
                                     child: TextField(
                                       keyboardType: TextInputType.number,
+                                      textAlignVertical:
+                                          TextAlignVertical.center,
                                       style: GoogleFonts.montserrat(
                                         textStyle: TextStyle(
                                           color:
@@ -302,6 +305,8 @@ class _MakeABidState extends State<MakeABid> {
                                       cursorColor:
                                           Color.fromARGB(255, 34, 96, 12),
                                       decoration: InputDecoration(
+                                        isCollapsed: true,
+                                        contentPadding: EdgeInsets.zero,
                                         isDense: true,
                                         border: InputBorder.none,
                                         hintText: 'Insert Here',
@@ -353,8 +358,8 @@ class _MakeABidState extends State<MakeABid> {
                   child: Center(
                     child: _isLoading
                         ? Container(
-                            width: 21.w,
-                            height: 21.w,
+                            width: 20.w,
+                            height: 20.w,
                             padding: const EdgeInsets.all(2.0),
                             child: const CircularProgressIndicator(
                               color: Colors.white,

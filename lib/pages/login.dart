@@ -79,8 +79,8 @@ class _LoginState extends State<Login> {
                     height: 8.h,
                   ),
                   Container(
-                    height: 320.h,
-                    width: 290.w,
+                    height: 310.h,
+                    width: 280.w,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.all(
@@ -101,8 +101,8 @@ class _LoginState extends State<Login> {
                                 height: 12.h,
                               ),
                               Container(
-                                height: 52.h,
-                                width: 104.w,
+                                height: 48.h,
+                                width: 98.w,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
                                     image: AssetImage('lib/imgs/login.png'),
@@ -243,8 +243,8 @@ class _LoginState extends State<Login> {
                                     child: Center(
                                       child: _isLoading
                                           ? SizedBox(
-                                              width: 18.w,
-                                              height: 18.w,
+                                              width: 16.w,
+                                              height: 16.w,
                                               child:
                                                   const CircularProgressIndicator(
                                                 color: Colors.white,
