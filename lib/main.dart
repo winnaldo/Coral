@@ -1,4 +1,4 @@
-import 'package:coral_ui/pages/splash_screen.dart';
+import 'package:coral_ui/pages/login_part/splash_screen.dart';
 import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
 

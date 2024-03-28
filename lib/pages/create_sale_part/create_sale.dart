@@ -47,7 +47,6 @@ class _CreateSaleState extends State<CreateSale> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.grey[100],
       resizeToAvoidBottomInset: false,
@@ -267,29 +266,33 @@ class _CreateSaleState extends State<CreateSale> {
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 12.w,
                                   ),
-                                  child: Row(
-                                    children: [
-                                      Image(
-                                        height: 22.w,
-                                        width: 22.w,
-                                        image:
-                                            AssetImage('lib/imgs/beach2.png'),
-                                      ),
-                                      SizedBox(
-                                        width: 10.w,
-                                      ),
-                                      Text(
-                                        "Wild",
-                                        style: GoogleFonts.lexend(
-                                          textStyle: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 66, 109, 87),
-                                            fontSize: 12.fs,
-                                            fontWeight: FontWeight.w800,
+                                  child: SizedBox(
+                                    height: 40.h,
+                                    width: 320.w,
+                                    child: Row(
+                                      children: [
+                                        Image(
+                                          height: 22.w,
+                                          width: 22.w,
+                                          image:
+                                              AssetImage('lib/imgs/beach2.png'),
+                                        ),
+                                        SizedBox(
+                                          width: 10.w,
+                                        ),
+                                        Text(
+                                          "Wild",
+                                          style: GoogleFonts.lexend(
+                                            textStyle: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255, 66, 109, 87),
+                                              fontSize: 12.fs,
+                                              fontWeight: FontWeight.w800,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ],
@@ -511,11 +514,11 @@ class _CreateSaleState extends State<CreateSale> {
                                     isDense: true,
                                     value: _selected1,
                                     items: _grades.map(
-                                      (grades) {
+                                      (gradesItem) {
                                         return DropdownMenuItem(
-                                          value: grades['score'].toString(),
+                                          value: gradesItem['score'].toString(),
                                           child: Text(
-                                            grades['score'],
+                                            gradesItem['score'],
                                             style: TextStyle(
                                               color: Color.fromARGB(
                                                   255, 66, 109, 87),

@@ -1,6 +1,4 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-
-import 'package:coral_ui/pages/navigation.dart';
 import 'package:coral_ui/pages/notifications/success_bid.dart';
 import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
@@ -371,7 +369,7 @@ class _MakeABidState extends State<MakeABid> {
                             style: GoogleFonts.lexend(
                               textStyle: TextStyle(
                                 color: Colors.white,
-                                fontSize: 15.fs,
+                                fontSize: 14.fs,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),

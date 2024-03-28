@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:coral_ui/pages/buy_now.dart';
+import 'package:coral_ui/pages/buy_part/buy_now.dart';
 import 'package:coral_ui/pages/close_auction.dart';
-import 'package:coral_ui/pages/make_a_bid.dart';
+import 'package:coral_ui/pages/buy_part/make_a_bid.dart';
 import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -642,7 +642,7 @@ class _FishInformationState extends State<FishInformation> {
                             style: GoogleFonts.lexend(
                               textStyle: TextStyle(
                                 color: Colors.white,
-                                fontSize: 15.fs,
+                                fontSize: 14.fs,
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
@@ -677,7 +677,7 @@ class _FishInformationState extends State<FishInformation> {
                             style: GoogleFonts.lexend(
                               textStyle: TextStyle(
                                 color: Colors.white,
-                                fontSize: 15.fs,
+                                fontSize: 14.fs,
                                 fontWeight: FontWeight.w800,
                               ),
                             ),

@@ -115,7 +115,7 @@ class _BuyNowState extends State<BuyNow> {
                               child: Image(
                                 height: 128.w,
                                 width: 128.w,
-                                image: AssetImage('lib/imgs/tuna.png'),
+                                image: const AssetImage('lib/imgs/tuna.png'),
                               ),
                             ),
                           ),
@@ -193,7 +193,7 @@ class _BuyNowState extends State<BuyNow> {
                             color: Color.fromARGB(255, 238, 227, 79),
                           ),
                           SizedBox(
-                            height: 1.h,
+                            height: 6.h,
                           ),
                           Column(
                             children: [
@@ -272,7 +272,7 @@ class _BuyNowState extends State<BuyNow> {
                             style: GoogleFonts.lexend(
                               textStyle: TextStyle(
                                 color: Colors.white,
-                                fontSize: 15.fs,
+                                fontSize: 14.fs,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),

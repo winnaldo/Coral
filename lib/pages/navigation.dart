@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:coral_ui/pages/create_nft.dart';
+import 'package:coral_ui/pages/create_sale_part/create_nft.dart';
 import 'package:coral_ui/pages/homepage.dart';
 import 'package:coral_ui/pages/profile_page.dart';
 import 'package:coral_ui/utils/sizing.dart';

@@ -1,12 +1,9 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, camel_case_types
 
 import 'dart:ui';
-
-import 'package:coral_ui/pages/login.dart';
+import 'package:coral_ui/pages/login_part/login.dart';
 import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class Splash_Screen extends StatefulWidget {
   const Splash_Screen({super.key});

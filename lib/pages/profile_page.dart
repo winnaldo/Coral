@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:coral_ui/pages/withdrawal.dart';
 import 'package:coral_ui/pages/your_bids.dart';
 import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
-
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }
@@ -59,7 +59,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(
-                          vertical: 5.h,
+                          vertical: 3.h,
                         ),
                         child: Container(
                           height: 28.h,
@@ -104,7 +104,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         },
                         child: Padding(
                           padding: EdgeInsets.symmetric(
-                            vertical: 5.h,
+                            vertical: 3.h,
                           ),
                           child: Container(
                             height: 28.h,
@@ -139,35 +139,45 @@ class _ProfilePageState extends State<ProfilePage> {
                         thickness: 1.5,
                         color: Color.fromARGB(255, 255, 193, 99),
                       ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 5.h,
-                        ),
-                        child: Container(
-                          height: 28.h,
-                          width: 258.w,
-                          color: Colors.transparent,
-                          child: Row(
-                            children: [
-                              Image(
-                                height: 32.w,
-                                width: 32.w,
-                                image: AssetImage('lib/imgs/withdrawal.png'),
-                              ),
-                              SizedBox(
-                                width: 16.w,
-                              ),
-                              Text(
-                                "Withdrawal",
-                                style: GoogleFonts.lexend(
-                                  textStyle: TextStyle(
-                                    color: Color.fromARGB(255, 66, 109, 87),
-                                    fontSize: 15.fs,
-                                    fontWeight: FontWeight.w800,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Withdrawal(),
+                            ),
+                          );
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: 3.h,
+                          ),
+                          child: Container(
+                            height: 28.h,
+                            width: 258.w,
+                            color: Colors.transparent,
+                            child: Row(
+                              children: [
+                                Image(
+                                  height: 32.w,
+                                  width: 32.w,
+                                  image: AssetImage('lib/imgs/withdrawal.png'),
+                                ),
+                                SizedBox(
+                                  width: 16.w,
+                                ),
+                                Text(
+                                  "Withdrawal",
+                                  style: GoogleFonts.lexend(
+                                    textStyle: TextStyle(
+                                      color: Color.fromARGB(255, 66, 109, 87),
+                                      fontSize: 15.fs,
+                                      fontWeight: FontWeight.w800,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -177,7 +187,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(
-                          vertical: 5.h,
+                          vertical: 3.h,
                         ),
                         child: Container(
                           height: 28.h,
