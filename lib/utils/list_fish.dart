@@ -1,6 +1,6 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables
 
-import 'package:coral_ui/pages/fish_information.dart';
+import 'package:coral_ui/utils/fish_information.dart';
 import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,21 +14,22 @@ class ListFish extends StatelessWidget {
   final String placeOrigin;
   final String grade;
   final String weight;
-  final bool status;
+  final status;
   final String endAt;
 
-  const ListFish(
-      {super.key,
-      required this.name,
-      required this.currentPrice,
-      required this.buyNowPrice,
-      required this.status,
-      required this.listingID,
-      required this.incrementPrice,
-      required this.placeOrigin,
-      required this.grade,
-      required this.endAt,
-      required this.weight});
+  const ListFish({
+    super.key,
+    required this.name,
+    required this.currentPrice,
+    required this.buyNowPrice,
+    required this.status,
+    required this.listingID,
+    required this.incrementPrice,
+    required this.placeOrigin,
+    required this.grade,
+    required this.endAt,
+    required this.weight,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +108,7 @@ class ListFish extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Starting",
+                    "Current",
                     style: GoogleFonts.lexend(
                       textStyle: TextStyle(
                         color: Color.fromARGB(255, 66, 109, 87),

@@ -1,13 +1,14 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_typing_uninitialized_variables
 import 'package:coral_ui/pages/create_sale_part/create_nft.dart';
 import 'package:coral_ui/pages/homepage.dart';
-import 'package:coral_ui/pages/profile_page.dart';
+import 'package:coral_ui/pages/menu_page.dart';
 import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
 
 class Navigation extends StatefulWidget {
-  const Navigation({super.key});
+  const Navigation({
+    super.key,
+  });
 
   @override
   State<Navigation> createState() => _NavigationState();
@@ -25,7 +26,7 @@ class _NavigationState extends State<Navigation> {
 
   final List<Widget> _pages = [
     Homepage(),
-    ProfilePage(),
+    Menu(),
   ];
 
   @override

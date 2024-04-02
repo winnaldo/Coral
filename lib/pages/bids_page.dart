@@ -1,20 +1,23 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:coral_ui/utils/constant.dart';
 import 'package:coral_ui/utils/list_fish.dart';
 import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
-class YourBids extends StatefulWidget {
-  const YourBids({super.key});
+class BidsPage extends StatefulWidget {
+  const BidsPage({super.key});
 
   @override
-  State<YourBids> createState() => _YourBidsState();
+  State<BidsPage> createState() => _BidsPageState();
 }
 
-class _YourBidsState extends State<YourBids> {
+class _BidsPageState extends State<BidsPage> {
   @override
   Widget build(BuildContext context) {
+    final loginProvider = Provider.of<LoginProvider>(context, listen: false);
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: SafeArea(
@@ -47,7 +50,9 @@ class _YourBidsState extends State<YourBids> {
                     width: 10.w,
                   ),
                   Text(
-                    "Your Bids",
+                    loginProvider.savedLoginAs == loginAs.BUYER
+                        ? "My Bids"
+                        : "My Sale",
                     style: GoogleFonts.lexend(
                       textStyle: TextStyle(
                         color: Color.fromARGB(255, 66, 109, 87),
@@ -75,7 +80,7 @@ class _YourBidsState extends State<YourBids> {
                       name: 'Tuna Fish',
                       currentPrice: '0.002 ETH',
                       buyNowPrice: '1 ETH',
-                      status: false,
+                      status: StatusType.OPEN,
                       listingID: '0003',
                       incrementPrice: '0.001 ETH',
                       placeOrigin: 'Korean Peninsula Sea',

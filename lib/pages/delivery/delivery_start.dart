@@ -5,18 +5,18 @@ import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CloseAuction extends StatefulWidget {
+class DeliveryStart extends StatefulWidget {
   final String name;
   final String currentPrice;
 
-  const CloseAuction(
+  const DeliveryStart(
       {super.key, required this.currentPrice, required this.name});
 
   @override
-  State<CloseAuction> createState() => _CloseAuctionState();
+  State<DeliveryStart> createState() => _DeliveryStartState();
 }
 
-class _CloseAuctionState extends State<CloseAuction> {
+class _DeliveryStartState extends State<DeliveryStart> {
   var _isLoading = false;
 
   void _onSubmit() {
@@ -334,7 +334,7 @@ class _CloseAuctionState extends State<CloseAuction> {
                 ),
               ),
               SizedBox(
-                height: 13.h,
+                height: 12.h,
               ),
               GestureDetector(
                 onTap: () {
@@ -363,7 +363,7 @@ class _CloseAuctionState extends State<CloseAuction> {
                             style: GoogleFonts.lexend(
                               textStyle: TextStyle(
                                 color: Colors.white,
-                                fontSize: 14.fs,
+                                fontSize: 13.fs,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),

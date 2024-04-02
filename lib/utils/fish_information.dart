@@ -1,11 +1,13 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, prefer_typing_uninitialized_variables
 
 import 'package:coral_ui/pages/buy_part/buy_now.dart';
-import 'package:coral_ui/pages/close_auction.dart';
+import 'package:coral_ui/pages/delivery/delivery_start.dart';
 import 'package:coral_ui/pages/buy_part/make_a_bid.dart';
+import 'package:coral_ui/utils/constant.dart';
 import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class FishInformation extends StatefulWidget {
   final String name;
@@ -16,7 +18,7 @@ class FishInformation extends StatefulWidget {
   final String placeOrigin;
   final String grade;
   final String weight;
-  final bool status;
+  final status;
   final String endAt;
 
   const FishInformation(
@@ -39,6 +41,8 @@ class FishInformation extends StatefulWidget {
 class _FishInformationState extends State<FishInformation> {
   @override
   Widget build(BuildContext context) {
+    final loginProvider = Provider.of<LoginProvider>(context, listen: false);
+
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: SafeArea(
@@ -508,57 +512,31 @@ class _FishInformationState extends State<FishInformation> {
                                       ),
                                     ),
                                   ),
-                                  if (widget.status == true) ...[
-                                    Row(
-                                      children: [
-                                        Image(
-                                          height: 16.w,
-                                          width: 16.w,
-                                          image:
-                                              AssetImage('lib/imgs/check.png'),
+                                  Row(
+                                    children: [
+                                      Image(
+                                        height: 16.w,
+                                        width: 16.w,
+                                        image: AssetImage(
+                                          statusIcon[widget.status]!,
                                         ),
-                                        SizedBox(
-                                          width: 8.w,
-                                        ),
-                                        Text(
-                                          'Open',
-                                          style: GoogleFonts.lexend(
-                                            textStyle: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 66, 109, 87),
-                                              fontSize: 13.fs,
-                                              fontWeight: FontWeight.w800,
-                                            ),
+                                      ),
+                                      SizedBox(
+                                        width: 8.w,
+                                      ),
+                                      Text(
+                                        statusString[widget.status]!,
+                                        style: GoogleFonts.lexend(
+                                          textStyle: TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 66, 109, 87),
+                                            fontSize: 13.fs,
+                                            fontWeight: FontWeight.w800,
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                  ] else ...[
-                                    Row(
-                                      children: [
-                                        Image(
-                                          height: 16.w,
-                                          width: 16.w,
-                                          image:
-                                              AssetImage('lib/imgs/remove.png'),
-                                        ),
-                                        SizedBox(
-                                          width: 8.w,
-                                        ),
-                                        Text(
-                                          'Closed',
-                                          style: GoogleFonts.lexend(
-                                            textStyle: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 66, 109, 87),
-                                              fontSize: 13.fs,
-                                              fontWeight: FontWeight.w800,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ]
+                                      ),
+                                    ],
+                                  ),
                                 ],
                               ),
                               SizedBox(
@@ -614,7 +592,7 @@ class _FishInformationState extends State<FishInformation> {
               SizedBox(
                 height: 12.h,
               ),
-              if (widget.status == true) ...[
+              if (loginProvider.savedLoginAs == loginAs.BUYER) ...{
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -631,7 +609,7 @@ class _FishInformationState extends State<FishInformation> {
                       },
                       child: Container(
                         height: 40.h,
-                        width: 153.w,
+                        width: 146.w,
                         decoration: BoxDecoration(
                           color: Color.fromARGB(255, 240, 204, 88),
                           borderRadius: BorderRadius.circular(10),
@@ -651,7 +629,7 @@ class _FishInformationState extends State<FishInformation> {
                       ),
                     ),
                     SizedBox(
-                      width: 14.w,
+                      width: 12.w,
                     ),
                     GestureDetector(
                       onTap: () {
@@ -666,7 +644,7 @@ class _FishInformationState extends State<FishInformation> {
                       },
                       child: Container(
                         height: 40.h,
-                        width: 153.w,
+                        width: 146.w,
                         decoration: BoxDecoration(
                           color: Color.fromARGB(255, 66, 109, 87),
                           borderRadius: BorderRadius.circular(10),
@@ -687,13 +665,13 @@ class _FishInformationState extends State<FishInformation> {
                     ),
                   ],
                 ),
-              ] else ...[
+              } else if (loginProvider.savedLoginAs == loginAs.SELLER) ...{
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => CloseAuction(
+                        builder: (context) => DeliveryStart(
                             currentPrice: widget.currentPrice,
                             name: widget.name),
                       ),
@@ -720,7 +698,7 @@ class _FishInformationState extends State<FishInformation> {
                     ),
                   ),
                 ),
-              ],
+              }
             ],
           ),
         ),

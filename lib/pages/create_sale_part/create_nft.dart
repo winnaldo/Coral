@@ -92,7 +92,7 @@ class _CreateNFTState extends State<CreateNFT> {
                 ),
                 child: Padding(
                   padding: EdgeInsets.only(
-                    top: 16.h,
+                    top: 14.h,
                     right: 14.w,
                     left: 14.w,
                     bottom: 12.h,
@@ -101,7 +101,7 @@ class _CreateNFTState extends State<CreateNFT> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SizedBox(
-                        height: 16.h,
+                        height: 14.h,
                       ),
                       Column(
                         children: [

@@ -155,14 +155,22 @@ class _WithdrawalState extends State<Withdrawal> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
-                                      Text(
-                                        "0.000015",
-                                        style: GoogleFonts.lexend(
-                                          textStyle: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 66, 109, 87),
-                                            fontSize: 12.fs,
-                                            fontWeight: FontWeight.w700,
+                                      SizedBox(
+                                        width: 200.w,
+                                        child: SingleChildScrollView(
+                                          physics: BouncingScrollPhysics(),
+                                          scrollDirection: Axis.horizontal,
+                                          child: Text(
+                                            "0.000015",
+                                            maxLines: 1,
+                                            style: GoogleFonts.montserrat(
+                                              textStyle: TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 66, 109, 87),
+                                                fontSize: 12.fs,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
                                           ),
                                         ),
                                       ),

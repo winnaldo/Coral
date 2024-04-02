@@ -1,9 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 import 'dart:ui';
+import 'package:coral_ui/pages/login_part/registration_option.dart';
 import 'package:coral_ui/pages/navigation.dart';
+import 'package:coral_ui/utils/constant.dart';
 import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -20,14 +23,17 @@ class _LoginState extends State<Login> {
     setState(() => _isLoading = true);
     Future.delayed(
       const Duration(seconds: 1, milliseconds: 500),
-      () async => setState(
-        () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => Navigation(),
-          ),
-        ),
-      ),
+      () async {
+        // Access the authProvider and set savedLoginAs
+        final loginProvider =
+            Provider.of<LoginProvider>(context, listen: false);
+        loginProvider.setSavedLoginAs(loginAs.SELLER);
+
+        setState(
+          () => Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Navigation())),
+        );
+      },
     );
   }
 
@@ -190,7 +196,7 @@ class _LoginState extends State<Login> {
                                     children: [
                                       Text(
                                         "Remember Address",
-                                        style: GoogleFonts.lexend(
+                                        style: GoogleFonts.montserrat(
                                           textStyle: TextStyle(
                                             color:
                                                 Color.fromARGB(255, 34, 96, 12),
@@ -199,24 +205,27 @@ class _LoginState extends State<Login> {
                                           ),
                                         ),
                                       ),
-                                      Checkbox(
-                                        value: isChecked,
-                                        onChanged: (bool? newValue) {
-                                          setState(
-                                            () {
-                                              isChecked = newValue;
-                                            },
-                                          );
-                                        },
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(20),
+                                      Transform.scale(
+                                        scale: 0.9,
+                                        child: Checkbox(
+                                          value: isChecked,
+                                          onChanged: (bool? newValue) {
+                                            setState(
+                                              () {
+                                                isChecked = newValue;
+                                              },
+                                            );
+                                          },
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                          checkColor: Colors.white,
+                                          activeColor:
+                                              Color.fromARGB(255, 34, 96, 12),
+                                          materialTapTargetSize:
+                                              MaterialTapTargetSize.shrinkWrap,
                                         ),
-                                        checkColor: Colors.white,
-                                        activeColor:
-                                            Color.fromARGB(255, 34, 96, 12),
-                                        materialTapTargetSize:
-                                            MaterialTapTargetSize.shrinkWrap,
                                       ),
                                     ],
                                   ),
@@ -301,13 +310,25 @@ class _LoginState extends State<Login> {
                                   SizedBox(
                                     width: 6.w,
                                   ),
-                                  Text(
-                                    "Register Here!",
-                                    style: GoogleFonts.montserrat(
-                                      textStyle: TextStyle(
-                                        color: Color.fromARGB(255, 1, 211, 176),
-                                        fontSize: 10.fs,
-                                        fontWeight: FontWeight.bold,
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              RegistrationOption(),
+                                        ),
+                                      );
+                                    },
+                                    child: Text(
+                                      "Register Here!",
+                                      style: GoogleFonts.montserrat(
+                                        textStyle: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 1, 211, 176),
+                                          fontSize: 10.fs,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                     ),
                                   ),
