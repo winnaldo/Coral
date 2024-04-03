@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables
 
+import 'package:coral_ui/pages/delivery/delivery_information.dart';
+import 'package:coral_ui/utils/constant.dart';
 import 'package:coral_ui/utils/fish_information.dart';
 import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +18,7 @@ class ListFish extends StatelessWidget {
   final String weight;
   final status;
   final String endAt;
+  final accessed;
 
   const ListFish({
     super.key,
@@ -29,16 +32,18 @@ class ListFish extends StatelessWidget {
     required this.grade,
     required this.endAt,
     required this.weight,
+    required this.accessed,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => FishInformation(
+        if (accessed != accessedFrom.ORDER) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => FishInformation(
                 name: name,
                 listingID: listingID,
                 currentPrice: currentPrice,
@@ -48,9 +53,34 @@ class ListFish extends StatelessWidget {
                 grade: grade,
                 weight: weight,
                 status: status,
-                endAt: endAt),
-          ),
-        );
+                endAt: endAt,
+                accessed: accessed,
+              ),
+            ),
+          );
+        } else {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DeliveryInformation(
+                name: 'Tuna Fish',
+                currentPrice: '0.002 ETH',
+                buyNowPrice: '1 ETH',
+                listingID: '0003',
+                incrementPrice: '0.001 ETH',
+                placeOrigin: 'Korean Peninsula Sea',
+                grade: 'S',
+                endAt: '08-05-23',
+                weight: '2500 Grams',
+                accessed: accessedFrom.ORDER,
+                buyerName: '0x12398u1293u129083u19283',
+                finalPrice: '0.0005 ETH',
+                address: '61 Daehak-ro, Gumi-si, Gyeongsangbuk-do, South Korea',
+                status: StatusType.ENROUTE,
+              ),
+            ),
+          );
+        }
       },
       child: Container(
         height: 72.h,

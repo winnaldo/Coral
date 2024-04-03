@@ -13,6 +13,18 @@ class CreateSale extends StatefulWidget {
 
 class _CreateSaleState extends State<CreateSale> {
   String _selected1 = 'S';
+  String? _selected2;
+  final List<Map> _habitat = [
+    {
+      'type': 'Wild',
+      'icon': 'lib/imgs/beach2.png',
+    },
+    {
+      'type': 'Farmed',
+      'icon': 'lib/imgs/pond.png',
+    },
+  ];
+
   List<Map> _grades = [
     {
       'score': 'S',
@@ -256,46 +268,87 @@ class _CreateSaleState extends State<CreateSale> {
                             width: 320.w,
                             decoration: BoxDecoration(
                               color: Color.fromARGB(255, 252, 250, 237),
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(12),
+                              ),
                             ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 12.w,
-                                  ),
-                                  child: SizedBox(
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                right: 12.w,
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
                                     height: 40.h,
                                     width: 320.w,
-                                    child: Row(
-                                      children: [
-                                        Image(
-                                          height: 22.w,
-                                          width: 22.w,
-                                          image:
-                                              AssetImage('lib/imgs/beach2.png'),
-                                        ),
-                                        SizedBox(
-                                          width: 10.w,
-                                        ),
-                                        Text(
-                                          "Wild",
-                                          style: GoogleFonts.lexend(
-                                            textStyle: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 66, 109, 87),
-                                              fontSize: 12.fs,
-                                              fontWeight: FontWeight.w800,
+                                    child: DropdownButtonHideUnderline(
+                                      child: ButtonTheme(
+                                        alignedDropdown: true,
+                                        child: DropdownButton(
+                                          isExpanded: true,
+                                          isDense: true,
+                                          hint: Text(
+                                            'Select Here',
+                                            style: GoogleFonts.montserrat(
+                                              textStyle: TextStyle(
+                                                color: Color.fromARGB(
+                                                    92, 34, 96, 12),
+                                                fontSize: 11.fs,
+                                                fontWeight: FontWeight.w600,
+                                              ),
                                             ),
                                           ),
+                                          value: _selected2,
+                                          onChanged: (newValue) {
+                                            setState(
+                                              () {
+                                                _selected2 = newValue!;
+                                              },
+                                            );
+                                          },
+                                          items: _habitat.map(
+                                            (sellerItem) {
+                                              return DropdownMenuItem(
+                                                value: sellerItem['type']
+                                                    .toString(),
+                                                child: Row(
+                                                  children: [
+                                                    Image(
+                                                      height: 16.w,
+                                                      width: 16.w,
+                                                      image: AssetImage(
+                                                        sellerItem['icon'],
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 8.w,
+                                                    ),
+                                                    Text(
+                                                      sellerItem['type'],
+                                                      style: GoogleFonts
+                                                          .montserrat(
+                                                        textStyle: TextStyle(
+                                                          color: Color.fromARGB(
+                                                              255, 66, 109, 87),
+                                                          fontSize: 11.fs,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              );
+                                            },
+                                          ).toList(),
                                         ),
-                                      ],
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                           SizedBox(

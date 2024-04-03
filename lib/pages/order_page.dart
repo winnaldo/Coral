@@ -83,6 +83,7 @@ class _OrderPageState extends State<OrderPage> {
                       grade: 'S',
                       endAt: '08-05-23',
                       weight: '2500 Grams',
+                      accessed: accessedFrom.ORDER,
                     ),
                   ],
                 ),

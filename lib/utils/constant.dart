@@ -2,6 +2,12 @@
 import 'package:flutter/material.dart';
 
 // CONSTANTS FOR USER MANAGEMENT
+enum accessedFrom {
+  HOMEPAGE,
+  BIDS,
+  ORDER,
+}
+
 enum authorizedTo {
   SELLER,
   PRODUCT,
@@ -52,10 +58,11 @@ final statusString = {
   StatusType.CLOSED: 'Closed',
   StatusType.BUYNOW: 'Buy Now',
   StatusType.WAITING: 'Waiting for Authentication',
-  StatusType.PREPARE: 'Prepare for Delivery',
-  StatusType.ENROUTE: 'En-route',
-  StatusType.DELIVERED: 'Delivered',
-  StatusType.FINISH: 'Finished',
+  StatusType.PREPARE: 'Preparing for Delivery',
+  StatusType.ENROUTE: 'En-Route',
+  StatusType.DELIVERED: 'Delivered', //ketika confirmed oleh buyer
+  StatusType.FINISH:
+      'Finished', //ketika NFT sudah dikirim setelah confirmed, jadi tombol finish ditangan seller
 };
 
 final statusIcon = {

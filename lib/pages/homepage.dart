@@ -2,6 +2,7 @@
 
 import 'package:coral_ui/pages/sales/farmed_fish.dart';
 import 'package:coral_ui/pages/sales/wild_caught_fish.dart';
+import 'package:coral_ui/utils/constant.dart';
 import 'package:coral_ui/utils/list_fish.dart';
 import 'package:coral_ui/utils/sizing.dart';
 import 'package:flutter/material.dart';
@@ -78,13 +79,14 @@ class _HomepageState extends State<Homepage> {
                               name: 'Tuna Fish',
                               currentPrice: '0.002 ETH',
                               buyNowPrice: '0.1 ETH',
-                              status: true,
+                              status: StatusType.OPEN,
                               listingID: '0001',
                               incrementPrice: '0.001 ETH',
                               placeOrigin: 'Meditterranean East Sea',
                               grade: 'A',
                               endAt: '08-05-23',
                               weight: '5500 Grams',
+                              accessed: accessedFrom.HOMEPAGE,
                             ),
                           ),
                           Padding(
@@ -95,13 +97,14 @@ class _HomepageState extends State<Homepage> {
                               name: 'Tuna Fish',
                               currentPrice: '0.003 ETH',
                               buyNowPrice: '0.02 ETH',
-                              status: true,
+                              status: StatusType.OPEN,
                               listingID: '0002',
                               incrementPrice: '0.001 ETH',
                               placeOrigin: 'Selat Sunda Sea',
                               grade: 'A',
                               endAt: '08-05-23',
                               weight: '3500 Grams',
+                              accessed: accessedFrom.HOMEPAGE,
                             ),
                           ),
                           Padding(
@@ -112,13 +115,14 @@ class _HomepageState extends State<Homepage> {
                               name: 'Tuna Fish',
                               currentPrice: '0.001 ETH',
                               buyNowPrice: '1 ETH',
-                              status: true,
+                              status: StatusType.OPEN,
                               listingID: '0003',
                               incrementPrice: '0.001 ETH',
                               placeOrigin: 'Korean Peninsula Sea',
                               grade: 'S',
                               endAt: '08-05-23',
                               weight: '2500 Grams',
+                              accessed: accessedFrom.HOMEPAGE,
                             ),
                           ),
                         ],

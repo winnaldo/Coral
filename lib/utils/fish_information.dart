@@ -20,6 +20,7 @@ class FishInformation extends StatefulWidget {
   final String weight;
   final status;
   final String endAt;
+  final accessed;
 
   const FishInformation(
       {super.key,
@@ -32,7 +33,8 @@ class FishInformation extends StatefulWidget {
       required this.grade,
       required this.weight,
       required this.status,
-      required this.endAt});
+      required this.endAt,
+      required this.accessed});
 
   @override
   State<FishInformation> createState() => _FishInformationState();
@@ -512,30 +514,39 @@ class _FishInformationState extends State<FishInformation> {
                                       ),
                                     ),
                                   ),
-                                  Row(
-                                    children: [
-                                      Image(
-                                        height: 16.w,
-                                        width: 16.w,
-                                        image: AssetImage(
-                                          statusIcon[widget.status]!,
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 8.w,
-                                      ),
-                                      Text(
-                                        statusString[widget.status]!,
-                                        style: GoogleFonts.lexend(
-                                          textStyle: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 66, 109, 87),
-                                            fontSize: 13.fs,
-                                            fontWeight: FontWeight.w800,
+                                  SizedBox(
+                                    width: 128.w,
+                                    child: SingleChildScrollView(
+                                      clipBehavior: Clip.antiAlias,
+                                      physics: BouncingScrollPhysics(),
+                                      scrollDirection: Axis.horizontal,
+                                      reverse: true,
+                                      child: Row(
+                                        children: [
+                                          Image(
+                                            height: 16.w,
+                                            width: 16.w,
+                                            image: AssetImage(
+                                              statusIcon[widget.status]!,
+                                            ),
                                           ),
-                                        ),
+                                          SizedBox(
+                                            width: 8.w,
+                                          ),
+                                          Text(
+                                            statusString[widget.status]!,
+                                            style: GoogleFonts.lexend(
+                                              textStyle: TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 66, 109, 87),
+                                                fontSize: 13.fs,
+                                                fontWeight: FontWeight.w800,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                    ],
+                                    ),
                                   ),
                                 ],
                               ),
@@ -592,7 +603,8 @@ class _FishInformationState extends State<FishInformation> {
               SizedBox(
                 height: 12.h,
               ),
-              if (loginProvider.savedLoginAs == loginAs.BUYER) ...{
+              if (loginProvider.savedLoginAs == loginAs.BUYER &&
+                  widget.accessed != accessedFrom.ORDER) ...{
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -665,7 +677,8 @@ class _FishInformationState extends State<FishInformation> {
                     ),
                   ],
                 ),
-              } else if (loginProvider.savedLoginAs == loginAs.SELLER) ...{
+              } else if (loginProvider.savedLoginAs == loginAs.SELLER &&
+                  widget.accessed != accessedFrom.ORDER) ...{
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
